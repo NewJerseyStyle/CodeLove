@@ -1,0 +1,128 @@
+name: Story Linter
+
+on:
+  pull_request:
+    paths:
+      - 'rpy/**/*.rpy'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'rpy/**/*.rpy'
+
+jobs:
+  lint:
+    name: Validate Story Flow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Install dependencies
+        run: |
+          uv venv
+          uv pip install pyyaml
+
+      - name: Run Story Linter
+        id: linter
+        run: |
+          uv run python story_linter.py --format json > linter_result.json || true
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+      - name: Parse results
+        id: parse
+        run: |
+          errors=$(jq '.errors | length' linter_result.json)
+          warnings=$(jq '.warnings | length' linter_result.json)
+          echo "errors=$errors" >> $GITHUB_OUTPUT
+          echo "warnings=$warnings" >> $GITHUB_OUTPUT
+
+      - name: Upload linter results
+        uses: actions/upload-artifact@v4
+        with:
+          name: linter-results
+          path: linter_result.json
+          retention-days: 30
+
+      - name: Comment PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('linter_result.json', 'utf8'));
+
+            let body = '## Story Linter Results\n\n';
+            body += `Total labels: ${results.total_labels}\n\n`;
+
+            // Errors
+            if (results.errors.length > 0) {
+              body += '### ❌ Errors (' + results.errors.length + ')\n\n';
+              results.errors.forEach(error => {
+                const file = error.file.split('/').pop();
+                body += `- **${error.label}** (${file})\n`;
+                body += `  ${error.message}\n\n`;
+              });
+            } else {
+              body += '### ✅ No errors\n\n';
+            }
+
+            // Warnings
+            if (results.warnings.length > 0) {
+              body += '### ⚠️ Warnings (' + results.warnings.length + ')\n\n';
+              results.warnings.forEach(warning => {
+                const file = warning.file.split('/').pop();
+                body += `- **${warning.label}** (${file})\n`;
+                body += `  ${warning.message}\n\n`;
+              });
+            } else {
+              body += '### ✅ No warnings\n\n';
+            }
+
+            // Summary
+            if (results.errors.length === 0 && results.warnings.length === 0) {
+              body += '\n🎉 Story validation passed!\n';
+            } else {
+              body += '\nPlease fix the issues above before merging.\n';
+            }
+
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(comment =>
+              comment.user.type === 'Bot' && comment.body.includes('Story Linter Results')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }
+
+      - name: Fail on errors
+        if: steps.parse.outputs.errors > 0
+        run: exit 1
