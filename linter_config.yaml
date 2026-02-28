@@ -1,0 +1,103 @@
+# Story Linter Configuration for Source Realm
+# This file defines the rules for validating label usage in Ren'Py scripts
+
+label_categories:
+  # Main story labels - the core narrative flow
+  story:
+    prefixes: []
+    needs_path_from_start: true
+    must_reach_ending: true
+    description: "Main story labels that form the core narrative path"
+
+  # Random events and triggered content
+  random_events:
+    prefixes: ["event_", "holiday_", "sleep_", "quiz_", "encounter_", "execute_explore", "execute_sleep", "jawa_daily_", "cee_daily_", "rusty_daily_", "py_daily_"]
+    needs_path_from_start: false
+    check_dynamic_jump_sources: true
+    can_be_dead_end: false
+    description: "Random events triggered by game systems, not directly linked to main story"
+
+  # Tutorial and teaching labels
+  tutorials:
+    prefixes: ["tutorial_", "syntax_tutorial_"]
+    needs_path_from_start: true
+    must_reach_ending: false
+    description: "Tutorial and teaching content that may branch from main story"
+
+  # Debug and development labels
+  debug:
+    prefixes: ["debug_", "test_", "example_"]
+    needs_path_from_start: false
+    must_reach_ending: false
+    can_be_dead_end: true
+    description: "Debug, test, and example code - intentionally isolated"
+
+  # System utility labels
+  system:
+    prefixes: ["show_", "display_", "check_", "init_"]
+    needs_path_from_start: false
+    must_reach_ending: false
+    can_be_dead_end: true
+    description: "System utilities for displaying content or checking conditions"
+
+  # Ending labels - these are intentional dead ends
+  endings:
+    prefixes: ["ending_", "end_"]
+    needs_path_from_start: true
+    must_reach_ending: false
+    can_be_dead_end: true
+    description: "Game endings - these are valid terminal points"
+
+# Validation rules
+validation:
+  # Error levels: error, warning, info
+  error_on:
+    - "orphaned_story_labels"
+    - "dead_ends_in_story"
+    - "unreachable_endings"
+    - "missing_images"
+
+  warning_on:
+    - "isolated_random_events"
+    - "uncategorized_labels"
+
+# Dynamic jump detection patterns
+dynamic_jump_patterns:
+  - 'jump expression'
+  - 'jump f"'
+  - 'jump store\.'
+  - 'renpy\.call'
+
+# Ignored labels (legacy or special cases)
+ignored_labels:
+  - "_start"
+  - "game_start"
+  - "_confirm_quit"
+  - "_quit"
+  - "_save_screen"
+  - "_load_screen"
+  - "_preferences_screen"
+  - "_history_screen"
+  - "_about_screen"
+  - "continue_story"  # Used by player_stats_examples for demo purposes
+
+# Ignored images (system effects that don't require physical files)
+ignored_images:
+  - "black"
+  - "black with fade"
+  - "None"
+  - "null"
+
+# Label naming conventions
+naming_conventions:
+  # All story labels should use lowercase with underscores
+  story_format: "lowercase_with_underscores"
+
+  # Event labels: event_<name>
+  event_format: "event_<description>"
+
+  # Chapter labels: <chapter_id>_<scene_id>
+  chapter_format: "<chapter_code>_<sequential_number>"
+
+  # Ending labels: ending_<type>_<variant> or ending_<name>
+  ending_format: "ending_<type>_<variant>"
