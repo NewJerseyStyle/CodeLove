@@ -39,8 +39,6 @@ label prologue_start:
     # 玩家靠近終端機
     narrator "角落裡有一台終端機，旁邊放著一個奇怪的頭盔裝置。"
 
-    pause 2.0
-
     # 玩家選擇
     menu:
         "靠近終端機":
@@ -51,7 +49,7 @@ label prologue_start:
         "離開實驗室":
             # 追蹤選擇（最優，避免了風險）
             $ track_choice("dialogue", is_optimal=True)
-            jump prologue_leave
+            jump ending_wise_choice
 
 label prologue_approach_terminal:
     # 玩家靠近終端機
@@ -178,8 +176,6 @@ label prologue_scan_start:
     pause 2.0
 
     # Cee 進入 Freeze 狀態（Segmentation Fault → Core Dump → Freeze）
-    cee ""
-
     narrator "（她突然停止了所有動作，眼神空白，像電腦死機了一樣）"
 
     narrator "（手中的文件掉落在地）"
@@ -352,7 +348,7 @@ label prologue_teaching_address:
     pause 2.0
 
     menu:
-        "好，我試試看（開始 C_01 章節）":
+        "好，我試試看":
             jump prologue_start_C01
 
         "先在旁邊觀察一下":
@@ -484,68 +480,5 @@ label prologue_end:
 
     pause 2.0
 
-    narrator "現在，你需要在源界中找到自己的位置。"
-
-    narrator "時間開始流動..."
-
-    pause 2.0
-
     # 進入時間線系統
     jump time_choice_menu
-
-label prologue_leave:
-    # 玩家選擇離開實驗室，獲得成就
-    scene black
-
-    with Dissolve(2.0)
-
-    narrator "你決定離開實驗室，不亂碰任何東西。"
-
-    pause 2.0
-
-    narrator "你走出了房間，關上了門。"
-
-    pause 2.0
-
-    narrator "幾分鐘後，阿源帶著便利店的便當回來了。"
-
-    source "咦，你去過實驗室？"
-
-    narrator "他看了一眼實驗室的記錄..."
-
-    source "沒有異常，很好。"
-
-    source "不過我剛剛在便利店看到一個很有趣的程式設計書..."
-
-    source "你對程式語言感興趣嗎？"
-
-    pause 2.0
-
-    # 觸發成就：明智的選擇
-    $ achievement_avoided_danger.grant()
-
-    narrator "......"
-
-    scene black
-
-    with Dissolve(3.0)
-
-    narrator "【結局：明智的選擇】"
-
-    narrator "你成功避免了不必要的冒險。"
-
-    narrator "有時候，轉身離開是最正確的決定。"
-
-    narrator "......"
-
-    narrator "雖然你沒有進入源界，但你依然安全地度過了這個下午。"
-
-    narrator "你保護了自己免受未知危險的影響。"
-
-    narrator "......"
-
-    narrator "【鳴謝】"
-
-    narrator "成就系統使用 Feniks 的 Achievements for Ren'Py"
-
-    return

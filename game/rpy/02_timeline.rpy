@@ -464,9 +464,9 @@ label execute_explore:
     narrator "[exploration_description]。"
 
     # 根據已探索的章節顯示不同的發現
-    if store.chapter_status.get("C_01") == "completed":
+    if store.get_chapter_status("C_01") == "completed":
         narrator "你路過記憶倉庫，遠遠看到 Cee 在整理書籍..."
-    if store.chapter_status.get("J_01") == "completed":
+    if store.get_chapter_status("J_01") == "completed":
         narrator "你路過契約局，聽到 Jawa 正在和某個居民爭論合約條款..."
 
     narrator "雖然沒有深入接觸，但你對源界有了更深的了解。"
@@ -556,7 +556,7 @@ label execute_cee_chapter:
     if current_cee_event_id == "C_01":
         jump cee_C01_start
     elif current_cee_event_id == "C_02":
-        jump cee_C02_start
+        jump ending_demo #cee_C02_start
     elif current_cee_event_id == "C_03":
         jump cee_C03_start
     elif current_cee_event_id == "C_04":
@@ -574,14 +574,14 @@ label execute_cee_chapter:
     elif current_cee_event_id == "END_SEQUENCE":
         jump cee_end_sequence
     else:
-        jump time_choice_menu
+        jump ending_demo #time_choice_menu
 
 label execute_jawa_chapter:
     # 從全局變量獲取事件 ID
     if current_jawa_event_id == "J_01":
         jump jawa_J01_start
     elif current_jawa_event_id == "J_02":
-        jump jawa_J02_start
+        jump ending_demo #jawa_J02_start
     elif current_jawa_event_id == "J_03":
         jump jawa_J03_start
     elif current_jawa_event_id == "J_04":
@@ -597,7 +597,7 @@ label execute_jawa_chapter:
     elif current_jawa_event_id == "J_09":
         jump jawa_J09_start
     else:
-        jump time_choice_menu
+        jump ending_demo #time_choice_menu
 
 label execute_shared_event:
     # 從全局變量獲取事件 ID
