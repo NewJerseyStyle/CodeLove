@@ -5,6 +5,7 @@
 # Ren'Py generated files
 *.rpyc
 *.rpyb
+*.rpymc
 *.pyc
 __pycache__/
 
