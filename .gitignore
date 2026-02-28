@@ -15,7 +15,6 @@ saves/
 tl/common/
 
 # Ren'Py specific
-game/
 *.txt
 *.log
 
@@ -25,6 +24,7 @@ game/
 *.swp
 *.swo
 *~
+*.md
 
 # OS specific
 .DS_Store
