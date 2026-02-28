@@ -35,7 +35,7 @@ jobs:
       - name: Run Story Linter
         id: linter
         run: |
-          uv run python story_linter.py --format json > linter_result.json || true
+          uv run python story_linter.py -p game --format json > linter_result.json || true
           echo "exit_code=$?" >> $GITHUB_OUTPUT
 
       - name: Parse results

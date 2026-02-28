@@ -123,41 +123,26 @@ class StoryLinter:
 
         for ext in supported_extensions:
             for img_file in images_path.rglob(f'*{ext}'):
-                # Get relative path from images directory
-                rel_path = img_file.relative_to(images_path)
+                # Ren'Py uses only filename (not directory path) for image names
+                filename = img_file.stem  # filename without extension
 
-                # Normalize for comparison:
-                # 1. Remove path separators, convert to forward slashes
-                # 2. Replace spaces and hyphens with underscores
-                # 3. Remove file extension
-                normalized = str(rel_path.with_suffix('')).replace('\\', '/').replace('/', '_').replace(' ', '_').replace('-', '_')
+                # Normalize filename for comparison:
+                # 1. Replace spaces and hyphens with underscores
+                normalized = filename.replace(' ', '_').replace('-', '_')
                 self.available_images.add(normalized)
 
-                # Split into parts for alias creation
-                parts = normalized.split('_')
+                # Create aliases based on filename patterns
 
-                # Create aliases for common directory prefixes
-                # "background_xxx" → "bg_xxx" and also just "xxx"
-                if len(parts) >= 2 and parts[0] == 'background':
-                    # For "background_note_paper", create:
-                    # 1. "bg_note_paper" (for scene bg xxx)
-                    # 2. "note_paper" (for show xxx)
-                    alias_with_bg = 'bg_' + '_'.join(parts[1:])
-                    alias_without_bg = '_'.join(parts[1:])
-                    self.available_images.add(alias_with_bg)
-                    self.available_images.add(alias_without_bg)
+                # Pattern 1: "bg xxx" → already handled by normalization above
+                # (e.g., "bg contract_office.jpeg" → "bg_contract_office")
 
-                # VFX directory: "vfx_xxx" → just "xxx"
-                if len(parts) >= 2 and parts[0] == 'vfx':
-                    alias_without_vfx = '_'.join(parts[1:])
-                    self.available_images.add(alias_without_vfx)
-
-                # Character directories: map directory name to character prefix
-                # "C_cee_normal" → "cee_normal"
-                # "Java_jawa_normal" → "jawa_normal"
-                # "Python_py_normal" → "py_normal"
-                # "Go_golly_normal" → "golly_normal"
-                # "Rust_rusty_normal" → "rusty_normal"
+                # Pattern 2: Character directory mappings
+                # Map directory names to character prefixes
+                # "C/cee tired.png" → "cee_tired"
+                # "Java/jawa normal.png" → "jawa_normal"
+                # "Python/py smile.png" → "py_smile"
+                # "Go/golly think.png" → "golly_think"
+                # "Rust/rusty worried.png" → "rusty_worried"
                 char_mappings = {
                     'C': 'cee',
                     'Java': 'jawa',
@@ -166,22 +151,26 @@ class StoryLinter:
                     'Rust': 'rusty'
                 }
 
-                if len(parts) >= 2 and parts[0] in char_mappings:
-                    char_prefix = char_mappings[parts[0]]
+                # Check if this file is in a character directory
+                parent_dir = img_file.parent.name
+                if parent_dir in char_mappings:
+                    char_prefix = char_mappings[parent_dir]
 
-                    # Check if the filename already starts with the character name
-                    # If so, use parts[2:] to avoid duplication
-                    if len(parts) >= 2 and parts[1].lower() == char_prefix.lower():
-                        # "C_cee_xxx" → "cee_xxx" (use parts[2:] for the rest)
-                        if len(parts) >= 3:
-                            alias = char_prefix + '_' + '_'.join(parts[2:])
-                        else:
-                            alias = char_prefix
-                    else:
-                        # "C_multi" → "cee_multi"
-                        alias = char_prefix + '_' + '_'.join(parts[1:])
+                    # Check if filename already starts with the character name
+                    # If so, keep it as is
+                    if not normalized.lower().startswith(char_prefix.lower() + '_'):
+                        # "tired" → "cee_tired"
+                        alias = char_prefix + '_' + normalized
+                        self.available_images.add(alias)
 
-                    self.available_images.add(alias)
+                    # Also handle Java-specific naming
+                    # "Jawa normal" → "jawa_normal"
+                    if parent_dir == 'Java':
+                        # Convert "Jawa" to lowercase
+                        if 'Jawa' in normalized:
+                            normalized_jawa = normalized.replace('Jawa', 'jawa')
+                            self.available_images.add(normalized_jawa)
+
 
     def validate_images(self) -> List[Dict[str, str]]:
         """Check all show statements have corresponding images"""
