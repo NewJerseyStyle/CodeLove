@@ -376,7 +376,7 @@ label time_choice_menu:
             $ current_line = "shared"
             $ player_participated = True
             $ current_shared_event_id = shared
-            jump execute_shared_event_entry
+            jump ending_demo #execute_shared_event_entry
 
         "在廣場休息一下 - 思考目前的情況":
             $ chosen_line = "rest"
@@ -476,32 +476,6 @@ label execute_explore:
 
     jump end_time_period
 
-label observe_auto_advance:
-    # 觀察自動推進的結果
-    call process_player_absent_effects
-
-    # 顯示自動推進的結果摘要
-    scene bg observation
-
-    narrator "你選擇了在這個時段旁觀..."
-
-    python hide:
-        current = get_current_time_period()
-        cee_event = get_cee_event(current)
-        jawa_event = get_jawa_event(current)
-
-    if cee_event and chosen_line != "cee":
-        narrator "Cee 線的 [cee_event] 已經自動推進。"
-
-    if jawa_event and chosen_line != "jawa":
-        narrator "Jawa 線的 [jawa_event] 已經自動推進。"
-
-    # 標記時間段已處理
-    $ time_period_processed = True
-
-    # 繼續到下一個時間段
-    jump end_time_period
-
 label end_time_period:
     # 更新現實時間計數器
     $ reality_weeks_passed += 1
@@ -555,22 +529,6 @@ label execute_cee_chapter:
     # 從全局變量獲取事件 ID
     if current_cee_event_id == "C_01":
         jump cee_C01_start
-    elif current_cee_event_id == "C_02":
-        jump ending_demo #cee_C02_start
-    elif current_cee_event_id == "C_03":
-        jump cee_C03_start
-    elif current_cee_event_id == "C_04":
-        jump cee_C04_start
-    elif current_cee_event_id == "C_05":
-        jump cee_C05_start
-    elif current_cee_event_id == "C_06":
-        jump cee_C06_start
-    elif current_cee_event_id == "C_07":
-        jump cee_C07_start
-    elif current_cee_event_id == "C_08":
-        jump cee_C08_start
-    elif current_cee_event_id == "C_09":
-        jump cee_C09_start
     elif current_cee_event_id == "END_SEQUENCE":
         jump cee_end_sequence
     else:
@@ -580,22 +538,6 @@ label execute_jawa_chapter:
     # 從全局變量獲取事件 ID
     if current_jawa_event_id == "J_01":
         jump jawa_J01_start
-    elif current_jawa_event_id == "J_02":
-        jump ending_demo #jawa_J02_start
-    elif current_jawa_event_id == "J_03":
-        jump jawa_J03_start
-    elif current_jawa_event_id == "J_04":
-        jump jawa_J04_start
-    elif current_jawa_event_id == "J_05":
-        jump jawa_J05_start
-    elif current_jawa_event_id == "J_06":
-        jump jawa_J06_start
-    elif current_jawa_event_id == "J_07":
-        jump jawa_J07_start
-    elif current_jawa_event_id == "J_08":
-        jump jawa_J08_start
-    elif current_jawa_event_id == "J_09":
-        jump jawa_J09_start
     else:
         jump ending_demo #time_choice_menu
 
