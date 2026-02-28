@@ -41,6 +41,7 @@ class StoryLinter:
         # Image validation
         self.show_statements: Dict[str, List[Tuple[str, str]]] = defaultdict(list)  # label -> [(image_name, file_path), ...]
         self.available_images: Set[str] = set()
+        self.images_dir = images_dir  # Save for later use
         if images_dir:
             self.collect_available_images(images_dir)
 
@@ -235,6 +236,91 @@ class StoryLinter:
 
         return visited
 
+    def find_unused_images(self) -> List[Dict[str, str]]:
+        """Find images that exist but are not referenced in any .rpy file"""
+        import os
+        from pathlib import Path
+        
+        images_dir = Path(self.images_dir) if hasattr(self, 'images_dir') else None
+        if not images_dir or not images_dir.exists():
+            return []
+        
+        # Collect all image files (skip bak/backup directories)
+        all_images = set()
+        for ext in ['.png', '.jpg', '.jpeg', '.webp']:
+            for img_file in images_dir.rglob(f'*{ext}'):
+                # Skip if in bak or backup directory
+                if 'bak' in img_file.parts or 'backup' in img_file.parts:
+                    continue
+                
+                filename = img_file.stem  # filename without extension
+                all_images.add(filename)
+                
+                # Add character aliases
+                parent_dir = img_file.parent.name
+                char_mappings = {
+                    'C': 'cee',
+                    'Java': 'jawa',
+                    'Python': 'py',
+                    'Go': 'golly',
+                    'Rust': 'rusty'
+                }
+                
+                if parent_dir in char_mappings:
+                    char_prefix = char_mappings[parent_dir]
+                    # Check if filename starts with char_prefix followed by space or underscore (case-insensitive)
+                    filename_lower = filename.lower()
+                    prefix_lower = char_prefix.lower()
+                    starts_with_prefix = (
+                        filename_lower.startswith(prefix_lower + ' ') or
+                        filename_lower.startswith(prefix_lower + '_')
+                    )
+
+                    if not starts_with_prefix:
+                        alias = char_prefix + '_' + filename
+                        all_images.add(alias)
+
+                    if parent_dir == 'Java':
+                        # Handle case differences: Jawa vs jawa
+                        if 'Jawa' in filename:
+                            filename_jawa = filename.replace('Jawa', 'jawa')
+                            all_images.add(filename_jawa)
+        
+        # Collect all used images from show/scene statements
+        used_images = set()
+        for label, shows in self.show_statements.items():
+            for image_name, file_path in shows:
+                # Normalize to lowercase for case-insensitive comparison
+                used_images.add(image_name.lower())
+        
+        # Find unused images (case-insensitive comparison)
+        unused = {img for img in all_images if img.lower() not in used_images}
+        
+        # Remove ignored images (case-insensitive)
+        ignored_images = {img.lower() for img in self.config.get('ignored_images', [])}
+        unused = [img for img in unused if img.lower() not in ignored_images]
+        
+        # Format as warnings
+        warnings_list = []
+        for img_name in sorted(unused):
+            # Try to find the actual file path
+            for ext in ['.png', '.jpg', '.jpeg', '.webp']:
+                img_file = images_dir.rglob(f'{img_name}{ext}')
+                try:
+                    first_match = next(img_file)
+                    warnings_list.append({
+                        'label': 'N/A',  # Unused images don't have a specific label
+                        'image': img_name,
+                        'file': str(first_match.relative_to(images_dir.parent)),
+                        'message': f"Image '{img_name}' exists but is not referenced in any .rpy file",
+                        'rule': 'unused_image',
+                    })
+                    break
+                except StopIteration:
+                    pass
+        
+        return warnings_list
+
     def validate(self) -> Dict[str, Any]:
         """Perform validation based on configuration"""
         errors = []
@@ -250,6 +336,12 @@ class StoryLinter:
                     errors.append(img_error)
                 else:
                     warnings.append(img_error)
+
+        # Check for unused images
+        if 'unused_images' in self.config.get('validation', {}).get('warning_on', []):
+            unused_images = self.find_unused_images()
+            for warning in unused_images:
+                warnings.append(warning)
 
         # Get all labels by category
         labels_by_category = defaultdict(list)
