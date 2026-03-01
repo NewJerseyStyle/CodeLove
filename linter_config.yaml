@@ -60,6 +60,7 @@ validation:
   warning_on:
     - "isolated_random_events"
     - "uncategorized_labels"
+    - "unused_images"
 
 # Dynamic jump detection patterns
 dynamic_jump_patterns:
@@ -87,6 +88,14 @@ ignored_images:
   - "black with fade"
   - "None"
   - "null"
+
+# Ignored directories (files in these directories will not be scanned)
+ignored_directories:
+  - "rpy/examples"
+  - "rpy/dlc/template_dlc/"
+  - "rpy/dlc/"
+  - "rpy/dlc_support.rpy"
+  - "rpy/player_stats_examples.rpy"
 
 # Label naming conventions
 naming_conventions:
