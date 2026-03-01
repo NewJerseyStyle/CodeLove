@@ -3,7 +3,24 @@
 # ============================================================================
 
 label shared_race_condition:
-    scene bg information_square_glitch
+    # 根據時間顯示對應背景
+    $ st_in_day = store.source_time % 15
+    python:
+        if st_in_day < 3:
+            renpy.scene()
+            renpy.show("bg plaza_morning")
+        elif st_in_day < 7:
+            renpy.scene()
+            renpy.show("bg plaza_noon")
+        elif st_in_day < 10:
+            renpy.scene()
+            renpy.show("bg plaza_afternoon")
+        elif st_in_day < 13:
+            renpy.scene()
+            renpy.show("bg plaza_evening")
+        else:
+            renpy.scene()
+            renpy.show("bg plaza_night")
     
     show cee normal at left
     show jawa normal at right
@@ -81,7 +98,24 @@ label shared_race_end:
 
 # 其他共同事件暫代...
 label shared_language_debate:
-    scene bg information_square_forum
+    # 根據時間顯示對應背景
+    $ st_in_day = store.source_time % 15
+    python:
+        if st_in_day < 3:
+            renpy.scene()
+            renpy.show("bg plaza_morning")
+        elif st_in_day < 7:
+            renpy.scene()
+            renpy.show("bg plaza_noon")
+        elif st_in_day < 10:
+            renpy.scene()
+            renpy.show("bg plaza_afternoon")
+        elif st_in_day < 13:
+            renpy.scene()
+            renpy.show("bg plaza_evening")
+        else:
+            renpy.scene()
+            renpy.show("bg plaza_night")
     
     show cee normal at left
     show jawa normal at center_left
@@ -121,7 +155,8 @@ label shared_language_debate:
     jump time_choice_menu
 
 label shared_ending_evaluation:
-    scene bg source_realm_core
+    # 結局評估使用特殊背景
+    scene bg digital_breakdown
     with Dissolve(2.0)
     
     narrator "你站在源界的核心，周圍閃爍著你旅途中做出的所有決定的數據碎片。"

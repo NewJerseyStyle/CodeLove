@@ -54,7 +54,7 @@ label execute_explore_random_normal:
 # ============================================================================
 
 label event_rusty_safety_check:
-    scene bg information_square_corner
+    scene bg plaza_rest
     show rusty normal at center
     narrator "你看到 Rusty 蹲在一個轉角處，正對著一個不斷冒煙的緩衝區發愁。"
     rusty "（自言自語）所有權轉移失敗... 借用檢查器報錯... 這裡應該用不可變借用才對..."
@@ -69,7 +69,7 @@ label event_rusty_safety_check:
 # ============================================================================
 
 label event_py_one_liner:
-    scene bg information_square_park
+    scene bg plaza_rest
     show py normal at center
     narrator "Py 正躺在草地上，身旁圍繞著幾個正在處理複雜矩陣運算的機器人。"
     py "result = [[x**2 for x in matrix if x %% 2 == 0]]。好了，去玩吧。"
@@ -82,7 +82,24 @@ label event_py_one_liner:
 # ============================================================================
 
 label event_witness_leetcode:
-    scene bg information_square_forum
+    # 根據時間顯示對應背景
+    $ st_in_day = store.source_time % 15
+    python:
+        if st_in_day < 3:
+            renpy.scene()
+            renpy.show("bg plaza_morning")
+        elif st_in_day < 7:
+            renpy.scene()
+            renpy.show("bg plaza_noon")
+        elif st_in_day < 10:
+            renpy.scene()
+            renpy.show("bg plaza_afternoon")
+        elif st_in_day < 13:
+            renpy.scene()
+            renpy.show("bg plaza_evening")
+        else:
+            renpy.scene()
+            renpy.show("bg plaza_night")
     narrator "布告欄前擠滿了人，大家正在討論如何優化一個『兩數之和』的任務。"
     narrator "路人 A：『用兩個嵌套迴圈，時間複雜度 O(n^2)。』"
     narrator "路人 B：『太慢了！用哈希表一次遍歷搞定，O(n) 才是優雅！』"
@@ -94,7 +111,7 @@ label event_witness_leetcode:
 # ============================================================================
 
 label event_locked_area_hint:
-    scene bg information_square_gate
+    scene black
     narrator "你走到了一個被銀色流光封鎖的大門前。"
     if cee_relationship in ["RESONANT", "PARTNER"]:
         narrator "門上的標籤寫著：『底層核心 - 0x0000』。現在你有權限進入。"
@@ -107,7 +124,24 @@ label event_locked_area_hint:
 # ============================================================================
 
 label event_golly_concurrent_pizza:
-    scene bg information_square_noon
+    # 根據時間顯示對應背景
+    $ st_in_day = store.source_time % 15
+    python:
+        if st_in_day < 3:
+            renpy.scene()
+            renpy.show("bg plaza_morning")
+        elif st_in_day < 7:
+            renpy.scene()
+            renpy.show("bg plaza_noon")
+        elif st_in_day < 10:
+            renpy.scene()
+            renpy.show("bg plaza_afternoon")
+        elif st_in_day < 13:
+            renpy.scene()
+            renpy.show("bg plaza_evening")
+        else:
+            renpy.scene()
+            renpy.show("bg plaza_night")
     show golly normal at center
     narrator "你看到 Golly 站在廣場中央，打了個響指。"
     golly "一千個 Goroutine，啟動！"
@@ -120,7 +154,24 @@ label event_golly_concurrent_pizza:
 # ============================================================================
 
 label event_jawa_gc_truck:
-    scene bg information_square_morning
+    # 根據時間顯示對應背景
+    $ st_in_day = store.source_time % 15
+    python:
+        if st_in_day < 3:
+            renpy.scene()
+            renpy.show("bg plaza_morning")
+        elif st_in_day < 7:
+            renpy.scene()
+            renpy.show("bg plaza_noon")
+        elif st_in_day < 10:
+            renpy.scene()
+            renpy.show("bg plaza_afternoon")
+        elif st_in_day < 13:
+            renpy.scene()
+            renpy.show("bg plaza_evening")
+        else:
+            renpy.scene()
+            renpy.show("bg plaza_night")
     narrator "一輛巨大的紫色清潔車開過街道，車身上印著：『Garbage Collector』。"
     narrator "所有路人都停下了腳步（Stop the World）。"
     show jawa normal at center
@@ -132,7 +183,7 @@ label event_jawa_gc_truck:
 # ============================================================================
 
 label event_cee_memory_leak_waterfall:
-    scene bg memory_warehouse_river
+    scene blue fall
     show cee normal at center
     narrator "Cee 站在一個不斷湧出藍色數據流的裂縫前。"
     cee "位址溢出。某個進程忘了執行 free()。這就是記憶體洩漏。"
@@ -144,7 +195,7 @@ label event_cee_memory_leak_waterfall:
 # ============================================================================
 
 label event_py_zen_garden:
-    scene bg information_square_park
+    scene bg plaza_rest
     show py normal at center
     py "來，念一遍。《The Zen of Python》。"
     py "『Beautiful is better than ugly.』"
@@ -156,7 +207,24 @@ label event_py_zen_garden:
 # ============================================================================
 
 label event_rusty_borrow_panic:
-    scene bg information_square_corner
+    # 根據時間顯示對應背景
+    $ st_in_day = store.source_time % 15
+    python:
+        if st_in_day < 3:
+            renpy.scene()
+            renpy.show("bg plaza_morning")
+        elif st_in_day < 7:
+            renpy.scene()
+            renpy.show("bg plaza_noon")
+        elif st_in_day < 10:
+            renpy.scene()
+            renpy.show("bg plaza_afternoon")
+        elif st_in_day < 13:
+            renpy.scene()
+            renpy.show("bg plaza_evening")
+        else:
+            renpy.scene()
+            renpy.show("bg plaza_night")
     show rusty shock at center
     rusty "不不不！你不能同時擁有兩個可變借用！這會導致未定義行為！"
     $ track_affection("rusty", 10)
@@ -167,7 +235,7 @@ label event_rusty_borrow_panic:
 # ============================================================================
 
 label event_shared_stack_vs_heap:
-    scene bg information_square_forum
+    scene bg plaza_rest
     narrator "你路過一個公園，看到兩個小孩在玩遊戲。"
     narrator "小孩 A：『看！這是 Stack！速度快但容量小！』"
     narrator "小孩 B：『這是 Heap！想放多少就放多少！』"
@@ -178,7 +246,24 @@ label event_shared_stack_vs_heap:
 # ============================================================================
 
 label event_world_hello_monument:
-    scene bg information_square_gate
+    # 根據時間顯示對應背景
+    $ st_in_day = store.source_time % 15
+    python:
+        if st_in_day < 3:
+            renpy.scene()
+            renpy.show("bg plaza_morning")
+        elif st_in_day < 7:
+            renpy.scene()
+            renpy.show("bg plaza_noon")
+        elif st_in_day < 10:
+            renpy.scene()
+            renpy.show("bg plaza_afternoon")
+        elif st_in_day < 13:
+            renpy.scene()
+            renpy.show("bg plaza_evening")
+        else:
+            renpy.scene()
+            renpy.show("bg plaza_night")
     narrator "你來到廣場盡頭，看到一座古老的方尖碑。"
     narrator "上面刻著無數種語言的同一個句子：『printf(\"Hello, World!\");』"
     $ source_realm_reputation += 5
@@ -189,7 +274,7 @@ label event_world_hello_monument:
 # ============================================================================
 
 label event_pub_quiz_trigger:
-    scene bg pub_interior
+    scene black
     narrator "酒館裡傳來陣陣歡呼聲，大家正在舉行一場『語法大師』挑戰賽。"
     $ current_quiz_char = random.choice(["Cee", "Jawa", "Rusty", "Py"])
     "NPC 酒保" "嘿！要不要挑戰一下關於 [current_quiz_char] 的語法測試？"
@@ -649,6 +734,9 @@ label encounter_py:
 # ============================================================================
 
 label execute_sleep_in_plaza:
+    # 睡覺時停止廣場音樂
+    $ stop_plaza_music()
+
     scene bg plaza_night
     narrator "深夜的廣場安靜得只能聽到資料流動的嗡鳴聲。"
     narrator "周圍的溫度調節到了最適合睡眠的數值。"

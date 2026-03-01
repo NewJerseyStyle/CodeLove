@@ -3,7 +3,7 @@
 # ============================================================================
 
 label jawa_J06_start:
-    scene bg contract_office_backlog
+    scene bg contract_office
     
     show jawa normal at left
     show rusty normal at center

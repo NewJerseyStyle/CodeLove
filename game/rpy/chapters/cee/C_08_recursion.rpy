@@ -3,7 +3,7 @@
 # ============================================================================
 
 label cee_C08_start:
-    scene bg memory_warehouse_fractal
+    scene bg memory_warehouse_moving
     
     show cee normal at center
     

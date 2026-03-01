@@ -3,7 +3,7 @@
 # ============================================================================
 
 label cee_C09_start:
-    scene bg memory_warehouse_collapse
+    scene bg memory_warehouse
     
     show cee normal at center
     

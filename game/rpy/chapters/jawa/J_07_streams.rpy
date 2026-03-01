@@ -3,7 +3,7 @@
 # ============================================================================
 
 label jawa_J07_start:
-    scene bg information_square_gate
+    scene bg plaza_rest
     
     show jawa normal at left
     show rusty normal at center

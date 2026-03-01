@@ -5,7 +5,7 @@
 label cee_C04_start:
     # 檢查之前的後果狀態
     if store.cee_consequence_state == "affected":
-        scene bg memory_warehouse_packaging_clutter
+        scene bg memory_warehouse
         show cee tired at center
         
         cee "（搬運資料時動作緩慢）"
@@ -29,7 +29,7 @@ label cee_C04_start:
     
     # 檢查 Rusty 的後果狀態
     if store.rusty_consequence_state == "affected":
-        scene bg memory_warehouse_packaging
+        scene bg memory_warehouse
         show cee normal at center
         
         # Rusty 出現，她會更加嚴格
@@ -43,7 +43,7 @@ label cee_C04_start:
         # 繼續正常流程
     else:
         # 正常流程
-        scene bg memory_warehouse_packaging
+        scene bg memory_warehouse
         
         show cee normal at center
         
@@ -75,7 +75,7 @@ label cee_04_take_responsibility:
     jump cee_04_main_task
 
 label cee_04_help_cleanup_first:
-    scene bg memory_warehouse_cleaning
+    scene bg memory_warehouse
     
     player "我們先清理之前的問題。"
     

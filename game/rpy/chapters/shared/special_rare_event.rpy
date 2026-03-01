@@ -17,6 +17,7 @@ label check_special_rare_event:
     $ special_chance = renpy.random.random()
     if special_chance < 0.01 and not persistent.special_event_encountered:
         $ persistent.special_event_encountered = True
+        $ stop_plaza_music()
         jump special_rare_event_intro
     else:
         jump execute_explore_random_normal

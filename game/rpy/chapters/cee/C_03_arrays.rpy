@@ -21,7 +21,7 @@ label cee_C03_start:
         rusty "（看著亂七八糟的工作區）我的資料還沒恢復..."
         rusty "如果你再搞出緩衝區溢出，我真的會生氣的。"
     
-    scene bg memory_warehouse_train
+    scene bg memory_warehouse
     
     show cee normal at center
     
@@ -177,7 +177,7 @@ label cee_03_risky_write:
     jump cee_03_end
 
 label cee_03_help_cleanup:
-    scene bg memory_warehouse_cleaning
+    scene bg memory_warehouse
 
     cee "（看著你來幫忙）"
     cee "清理記憶體洩漏。需要釋放未歸還的空間。"

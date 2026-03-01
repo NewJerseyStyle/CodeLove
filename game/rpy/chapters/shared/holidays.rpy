@@ -12,7 +12,7 @@ init python:
 label holiday_A:
     # 檢查 Cee 的後果狀態
     if store.cee_consequence_state == "affected":
-        scene bg memory_warehouse_clutter
+        scene bg memory_warehouse
         show cee worried at center
         
         cee "（看著混亂的工作區）無法外出。"
@@ -28,7 +28,7 @@ label holiday_A:
     
     # 檢查 Rusty 的後果狀態
     if store.rusty_consequence_state == "affected":
-        scene bg information_square_corner
+        scene bg plaza_rest
         show rusty angry at center
         
         rusty "（抱著頭）我的資料還沒恢復..."
@@ -46,7 +46,7 @@ label holiday_A:
     jump expression f"jawa_daily_{event_variant}"
 
 label holiday_A_help_cee:
-    scene bg memory_warehouse_cleaning
+    scene bg memory_warehouse
     show cee normal at center
     
     cee "（看著你來幫忙）"
@@ -84,7 +84,7 @@ label holiday_A_help_cee:
     jump end_time_period
 
 label holiday_A_help_rusty:
-    scene bg information_square_corner
+    scene bg plaza_rest
     show rusty normal at center
     
     rusty "（看著你）你願意幫忙？"
@@ -131,7 +131,7 @@ label holiday_A_skip_cee:
 label holiday_A_skip_rusty:
     $ event_variant = random.choice(["reading", "coffee"])
     jump expression f"jawa_daily_{event_variant}"
-    scene bg information_square_afternoon
+    scene bg plaza_afternoon
     show jawa normal at center
     narrator "你在資訊廣場偶遇了 Jawa。她正專心地讀著一本厚厚的手冊。"
     jawa "（抬頭）是你。今天不是工作時間，為什麼不休息一下？"
@@ -159,7 +159,7 @@ label jawa_daily_coffee:
 label holiday_B:
     # 檢查 Cee 的後果狀態和可用時間
     if store.cee_consequence_state == "affected" or store.cee_available_time_reduction > 20:
-        scene bg memory_warehouse_busy
+        scene bg memory_warehouse
         show cee tired at center
 
         cee "（忙著處理工作區的混亂）"
@@ -188,8 +188,7 @@ label holiday_B:
         jump expression f"cee_daily_{event_variant}"
 
 label cee_daily_river:
-    scene bg memory_warehouse_river
-    show cee normal at center
+    scene cee special
     narrator "你在記憶倉庫的最深處找到了 Cee。她正看著前方流動的『記憶之河』。"
     cee "位址流動。0 到 無限。這就是源界的生命線。"
     player "這裡很美，Cee。"
@@ -198,7 +197,7 @@ label cee_daily_river:
     jump end_time_period
 
 label cee_daily_sorting:
-    scene bg memory_warehouse_aisle
+    scene bg memory_warehouse
     show cee normal at center
     narrator "你看到 Cee 正在強迫症發作般地調整一排書的高度。"
     cee "（小聲）這本書的位址雖然正確，但物理高度偏離了 2 毫米。無效率的視覺佈局。"
@@ -208,7 +207,7 @@ label cee_daily_sorting:
     jump end_time_period
 
 label cee_daily_deep_memory:
-    scene bg memory_warehouse_deep
+    scene cee special
     show cee normal at center
     narrator "Cee 帶你來到記憶倉庫的最深處。這裡沒有堆滿的箱子，只有流動的資料光流。"
     cee "（輕聲）這裡是源界的底層。很少有人能來。"
@@ -226,7 +225,7 @@ label cee_daily_deep_memory:
     jump end_time_period
 
 label holiday_B_help_cee:
-    scene bg memory_warehouse_cleaning
+    scene bg memory_warehouse
     show cee normal at center
 
     if store.cee_consequence_state == "affected":
@@ -285,7 +284,7 @@ label holiday_B_help_cee:
         jump end_time_period
 
 label holiday_B_solo:
-    scene bg information_square_afternoon
+    scene bg plaza_afternoon
 
     narrator "你獨自來到資訊廣場。沒有 Cee 的陪伴，顯得有些冷清。"
 
@@ -301,7 +300,7 @@ label holiday_B_solo:
             jump end_time_period
 
 label holiday_B_explore:
-    scene bg memory_warehouse_deep
+    scene black
 
     narrator "你獨自來到記憶倉庫的最深處。沒有 Cee 的引導，你看到的是..."
 
@@ -322,7 +321,7 @@ label holiday_B_explore:
 # ============================================================================
 
 label rusty_daily_safety:
-    scene bg information_square_corner
+    scene bg plaza_rest
     show rusty normal at center
     narrator "你看到 Rusty 正在檢查廣場噴泉的圍欄。"
     rusty "萬一有人在這裡發生空指針引用掉下去怎麼辦！我必須安裝更多的溢位保護！"
@@ -336,7 +335,7 @@ label rusty_daily_safety:
 # ============================================================================
 
 label py_daily_nap:
-    scene bg information_square_park
+    scene bg plaza_rest
     show py normal at center
     narrator "Py 正在草地上尋找最完美的午睡陰影。"
     py "這裡的光線縮排剛好是四格，完美。新來的，要一起躺會兒嗎？"

@@ -3,7 +3,7 @@
 # ============================================================================
 
 label cee_C06_start:
-    scene bg memory_warehouse_archive
+    scene bg memory_warehouse
     
     show cee normal at center
     

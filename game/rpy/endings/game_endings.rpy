@@ -7,7 +7,7 @@
 # ============================================================================
 
 label ending_true:
-    scene bg source_realm_full_bloom
+    scene bg source_realm_entrance
     with Fade(3.0, 1.0, 3.0)
     
     show cee normal at left
@@ -30,7 +30,7 @@ label ending_true:
     
     narrator "你感覺自己的意識正在與整個源界融為一體。你不再只是一個過客，你成為了這個數位世界的一份子。"
     
-    scene bg laboratory_modern
+    scene bg laboratory
     with Dissolve(3.0)
     
     narrator "現實世界中，阿源走進實驗室，看著螢幕上完美運行的代碼，露出了震驚的表情。"
@@ -47,7 +47,7 @@ label ending_true:
 # ============================================================================
 
 label ending_good:
-    scene bg information_square_sunset
+    scene bg plaza_evening
     with Fade(2.0, 1.0, 2.0)
     
     show cee normal at left
@@ -64,7 +64,7 @@ label ending_good:
     scene bg laboratory
     with Dissolve(2.0)
     
-    source "（看到你醒來）呼，你可算醒了！代碼跑通了，雖然還是有點卡，但已經很厲害了！"
+    source "（看到你醒來）呼，你可算醒了！"
     
     narrator "【好結局：源界的守護者】"
     narrator "你成功拯救了源界，並學會了多種思維方式。你將成為一名優秀的工程師。"
@@ -76,7 +76,7 @@ label ending_good:
 # ============================================================================
 
 label ending_normal:
-    scene bg information_square_noon
+    scene bg plaza_noon
     
     if store.cee_relationship in ["RESONANT", "PARTNER"]:
         show cee normal at center
@@ -153,17 +153,14 @@ label ending_wise_choice:
 # ============================================================================
 
 label ending_source_rescue:
-    scene bg source_realm_void
     with hpunch # 劇烈震動
     
     narrator "原本平靜的資訊廣場突然開始劇烈扭曲，色彩如同過載的顯示器一般崩解。"
     
     narrator "你感到一陣強烈的噁心感，意識像是被某種巨大的力量強行抽離..."
     
-    scene bg laboratory_dark
+    scene bg laboratory
     with Fade(0.1, 0.5, 1.0)
-    
-    show source normal at center
     
     source "（用力拍打著終端機，一臉焦急）喂！醒醒！快醒醒！"
     
@@ -172,21 +169,18 @@ label ending_source_rescue:
     source "（看到你醒來，終於鬆了一口氣，一屁股坐在地上）"
     source "天哪，你總算回來了。再晚一秒，你的意識就要跟那些底層垃圾資料一起被回收了。"
     
-    player "我在那邊...待了三天..."
+    player "我在那邊...待了..."
     
-    source "（苦笑著指指牆上的日曆）三天？兄弟，現實世界已經過了整整四天了。"
+    source "（苦笑著指指牆上的日曆）幾十個小時？兄弟，現實世界已經過了整整四天了。"
     
     source "這就是高精細模擬的代價——時鐘頻率不同步。源界的 1 週期，在我們這裡要跑更久。"
     
     player "四天？！那我的工作..."
     
-    # 辦公室門被推開的聲音
-    play sound "audio/door_open.ogg"
+    "主管的信息" "你這四天去哪了？電話不接郵件不回！"
+    "主管的信息" "考慮到你嚴重的曠工行為，這個月的績效獎金全扣，工資扣除四天！再有下次就捲舖蓋走人！"
     
-    "主管的聲音" "小王！你這四天去哪了？電話不接郵件不回！"
-    "主管的聲音" "考慮到你嚴重的曠工行為，這個月的績效獎金全扣，工資扣除四天！再有下次就捲舖蓋走人！"
-    
-    source "（縮了縮脖子，小聲對你說）歡迎回到現實世界... 雖然這裡比源界殘酷得多。"
+    source "（縮了縮脖子，小聲對你說）歡迎回到現實世界... 雖然這裡殘酷得多。"
     
     narrator "【結局：現實的重擊】"
     narrator "你雖然從虛擬世界生還，但現實生活的賬單卻比邏輯錯誤更讓你頭疼。"
@@ -197,7 +191,7 @@ label ending_final_ack:
 
     narrator "【鳴謝】"
 
-    narrator "讓這個想法出現的那個 Kashikoi & Kawaii 的傢伙"
+    narrator "提出這個想法的那個 Kashikoi & Kawaii 的傢伙"
 
     narrator "成就系統使用 Feniks 的 Achievements for Ren'Py 和 ImgFlip 的迷因圖"
 

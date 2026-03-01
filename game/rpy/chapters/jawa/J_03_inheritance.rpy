@@ -3,7 +3,7 @@
 # ============================================================================
 
 label jawa_J03_start:
-    scene bg contract_office_archive
+    scene bg contract_office
     
     show jawa normal at left
     show rusty normal at right

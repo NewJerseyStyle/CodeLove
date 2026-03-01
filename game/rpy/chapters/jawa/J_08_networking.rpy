@@ -3,8 +3,9 @@
 # ============================================================================
 
 label jawa_J08_start:
-    scene bg information_square_void
+    scene bg contract_office
     
+    scene black with fade
     show jawa normal at left
     show rusty normal at center
     

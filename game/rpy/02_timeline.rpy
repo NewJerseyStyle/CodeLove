@@ -181,14 +181,17 @@ label time_choice_menu:
     $ current_time_period = current
     $ time_period_processed = False
 
+    # 進入廣場時播放背景音樂
+    python:
+        play_plaza_music()
+
     python:
         st = store.source_time
         day_count = int(st // 15) + 1
         st_in_day = st % 15
 
-        if st >= 36:
+        if should_force_ending():
             time_description = "系統不穩定時段"
-            renpy.show("bg source_realm_core")
             renpy.say("narrator", "你感到空氣中的數據粒子變得異常狂暴，遠處的空間隱約透出裂縫。")
         elif st_in_day < 3:
             time_description = f"第 {day_count} 天 清晨"
@@ -213,31 +216,37 @@ label time_choice_menu:
 
     menu:
         "前往結局評估" if shared == "ENDING_EVALUATION":
+            $ stop_plaza_music()
             jump execute_shared_event
-            
+
         "前往共同事件：[shared]" if shared and shared != "ENDING_EVALUATION" and shared != "BAD_END_A_CHECK":
+            $ stop_plaza_music()
             jump execute_shared_event
 
         "前往記憶倉庫":
+            $ stop_plaza_music()
             $ chosen_line = "cee"
             jump execute_location_check
 
         "前往契約局":
+            $ stop_plaza_music()
             $ chosen_line = "jawa"
             jump execute_location_check
 
         "在廣場坐一會兒":
+            # 在廣場坐一會兒不需要停止音樂（仍然在廣場）
             $ chosen_line = "rest"
             jump execute_rest
 
         "在源界隨處逛逛":
+            # 在源界隨處逛逛不需要停止音樂（仍然在閒逛）
             $ chosen_line = "explore"
             jump execute_explore
 
 label execute_location_check:
     $ current = get_current_time_period()
-    # 結局時段 (ST 36+) 封鎖地點進入
-    if store.source_time >= 36:
+    # 結局時段封鎖地點進入（使用動態檢查）
+    if should_force_ending():
         narrator "源界的核心正在重組，所有區域暫時封鎖。你應該去參與最終評估。"
         jump time_choice_menu
 
@@ -273,9 +282,9 @@ label execute_rest:
         st = store.source_time
         st_in_day = st % 15
         is_late_night = st_in_day >= 13
-        # 結局保底判定
-        is_end_time = st >= 36
-    
+        # 結局保底判定（使用動態檢查）
+        is_end_time = should_force_ending()
+
     if is_end_time:
         narrator "你感到一股不可抗拒的吸力從源界中心傳來..."
         jump shared_ending_evaluation
@@ -287,7 +296,8 @@ label execute_rest:
 label end_time_period:
     $ advance_time_to_next_period()
     $ reality_weeks_passed += 1
-    $ current_ending = check_ending_conditions()
+    # 使用動態結局檢查（支持 DLC 擴展）
+    $ current_ending = check_all_endings()
     if current_ending != "none":
         jump trigger_ending
     jump time_choice_menu

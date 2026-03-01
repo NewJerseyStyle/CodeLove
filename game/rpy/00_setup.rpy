@@ -73,16 +73,6 @@ default cross_language_error_occurred = False
 default cross_language_error_type = ""
 
 # 當前正在顯示的後果類型（用於教學卡片）
-default current_consequence_type = ""
-
-# 當前教學行（用於循環顯示教學內容）
-default current_teaching_line = ""
-
-# 當前反應的角色和後果類型（用於 show_consequence_reaction）
-default current_reaction_character = ""
-default current_reaction_consequence = ""
-default current_reaction_line = ""
-
 # ============================================================================
 # 6. 全局變量 - 假日系統
 # ============================================================================
