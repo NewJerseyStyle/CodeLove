@@ -56,6 +56,9 @@ class StoryLinter:
         # Compile ignored labels list
         self.ignored_labels = set(self.config.get('ignored_labels', []))
 
+        # Compile ignored directories list
+        self.ignored_directories = self.config.get('ignored_directories', [])
+
     def _load_config(self, config_path: str) -> Dict:
         """Load configuration from YAML file"""
         try:
@@ -80,6 +83,10 @@ class StoryLinter:
                            'needs_path_from_start': True, 'must_reach_ending': False, 'can_be_dead_end': True},
             },
             'ignored_labels': [],
+            'ignored_directories': [
+                'rpy/dlc/template_dlc/',
+                'rpy/dlc/',
+            ],
         }
 
     def _get_label_category(self, label_name: str) -> str:
@@ -100,6 +107,30 @@ class StoryLinter:
     def _is_ending_label(self, label_name: str) -> bool:
         """Check if a label is an ending"""
         return label_name.startswith('ending_') or label_name.endswith('_end')
+
+    def _should_ignore_file(self, file_path: str, project_root: str = None) -> bool:
+        """Check if a file should be ignored based on directory"""
+        file_path_normalized = file_path.replace('\\', '/')
+        
+        # Convert absolute path to relative path if project_root is provided
+        if project_root:
+            project_root_normalized = project_root.replace('\\', '/')
+            if file_path_normalized.startswith(project_root_normalized):
+                file_path_normalized = file_path_normalized[len(project_root_normalized):].lstrip('/')
+
+        for ignored_dir in self.ignored_directories:
+            # Normalize ignored directory path
+            ignored_dir_normalized = ignored_dir.replace('\\', '/').rstrip('/') + '/'
+
+            # Check if file is in ignored directory (relative path matching)
+            if file_path_normalized.startswith(ignored_dir_normalized):
+                return True
+            
+            # Also check if the file path contains the ignored directory as a segment
+            if '/' + ignored_dir_normalized.rstrip('/') + '/' in '/' + file_path_normalized + '/':
+                return True
+
+        return False
 
     def add_label(self, label_name: str, file_path: str):
         """Add a label to the graph"""
@@ -184,6 +215,12 @@ class StoryLinter:
             for image_name, file_path in shows:
                 # Skip ignored images (like "black" screen)
                 if image_name in ignored_images:
+                    continue
+
+                # Skip hex color syntax (e.g., "#hex", "#ffffff")
+                # Handle both "#FFEE8C" and quoted '"#FFEE8C"'
+                stripped = image_name.strip('"\'')
+                if stripped.startswith('#'):
                     continue
 
                 # Normalize image name for comparison
@@ -505,10 +542,17 @@ def analyze_all_rpy_files(project_root: str, config_path: str, images_dir: str =
 
     # Iterate through all .rpy files
     for rpy_file in Path(project_root).rglob('*.rpy'):
+        file_path_str = str(rpy_file)
+
         # Skip files in examples/ directory
         if 'examples' in rpy_file.parts:
             continue
-        parse_rpy_file(str(rpy_file), linter)
+
+        # Skip files in ignored directories
+        if linter._should_ignore_file(file_path_str, project_root):
+            continue
+
+        parse_rpy_file(file_path_str, linter)
 
     return linter
 
