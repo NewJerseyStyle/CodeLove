@@ -26,15 +26,11 @@ label prologue_start:
 
     note "別亂碰任何東西，特別是那個頭盔。"
 
-    pause 2.0
-
     hide note
 
     narrator "看樣子阿源又要很久才回來。"
 
     narrator "你在實驗室裡四處看了看..."
-
-    pause 1.5
 
     # 玩家靠近終端機
     narrator "角落裡有一台終端機，旁邊放著一個奇怪的頭盔裝置。"
@@ -91,8 +87,6 @@ label prologue_scan_start:
         repeat 3
 
     narrator "「開始全身掃描...」"
-
-    pause 2.0
 
     hide scan_beam
 
@@ -157,8 +151,6 @@ label prologue_scan_start:
 
     narrator "遠處有人影在快速移動——那移動速度令人驚訝。"
 
-    pause 1.5
-
     # Cee 發現玩家
     show cee normal at left
 
@@ -172,8 +164,6 @@ label prologue_scan_start:
     with Dissolve(0.5)
 
     cee "......"
-
-    pause 2.0
 
     # Cee 進入 Freeze 狀態（Segmentation Fault → Core Dump → Freeze）
     narrator "（她突然停止了所有動作，眼神空白，像電腦死機了一樣）"
@@ -268,8 +258,6 @@ label prologue_cee_accept:
 
     rusty "不然 Master Control Program 的薩克會把你當成垃圾資料消滅掉的！"
 
-    pause 2.0
-
     # 玩家可以問問題
     menu:
         "這是哪裡？":
@@ -288,19 +276,6 @@ label prologue_ask_location:
     rusty "（吐舌頭）她又開始了。簡單說，這裡是源界的底層。你想去的地方、看到的人，其實都是從這裡的資料『長』出來的。"
 
     jump prologue_more_questions
-
-label prologue_ask_help:
-    player "我可以幫你嗎？"
-
-    rusty "你要幫 Cee 嗎？太好了！她這裡總是有忙不完的事。"
-
-    cee "（打量你）你知道怎麼讀取編號嗎？"
-
-    cee "（轉過身）這需要精確的操作。"
-
-    rusty "別理她，編號就像儲存櫃號碼一樣簡單。只要你能看懂，你就能幫上忙！"
-
-    jump prologue_teaching_address
 
 label prologue_ask_exit:
     player "我要怎麼離開這裡？"
@@ -339,13 +314,9 @@ label prologue_teaching_address:
 
     cee "搬動整個箱子太慢。記住編號，直接讀取內容。這才有效率。"
 
-    pause 2.0
-
     rusty "所以，在去資訊廣場之前，你要先幫 Cee 處理一些『損毀的標籤』。"
 
     rusty "這也是為了讓系統重新認識你，幫你建立一個正確的『標籤』。"
-
-    pause 2.0
 
     menu:
         "好，我試試看":
@@ -378,8 +349,6 @@ label prologue_just_watch:
     narrator "區域 1：A-D。區域 2：E-H。區域 3：I-L。區域 4：M-Z。"
 
     narrator "既然書是 A 開頭，應該直接去區域 1。"
-
-    pause 2.0
 
     menu:
         "建議按索引區域找":
@@ -453,8 +422,6 @@ label prologue_start_C01:
 
     cee "那就從這個開始。"
 
-    pause 1.0
-
     cee "（指向一疊待處理的文件）"
 
     cee "這是一個任務。位址分配。"
@@ -478,7 +445,7 @@ label prologue_end:
 
     narrator "以及 Cee 的工作方式。"
 
-    pause 2.0
+    narrator "現在，你需要在源界中找到回家的路……又或者展開冒險。"
 
     # 進入時間線系統
     jump time_choice_menu

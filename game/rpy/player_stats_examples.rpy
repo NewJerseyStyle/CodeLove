@@ -56,8 +56,6 @@ label example_algorithm_choice:
 
             cee "二分搜尋？好主意。"
 
-            pause 1.5
-
             # 算法導師成就自動更新（因為在 track_choice 中調用了）
             cee "找到了！這樣快多了。"
 
@@ -235,8 +233,6 @@ label example_end_stats:
 
     narrator "最優選擇比例：[stats['optimal_ratio']]%"
 
-    pause 3.0
-
     narrator "=================="
 
     # 根據統計數據給予評價
@@ -246,8 +242,6 @@ label example_end_stats:
         narrator "你做出的大部分決定都是正確的。"
     else:
         narrator "你需要更多經驗來做出更好的決定。"
-
-    pause 3.0
 
     jump credits
 
