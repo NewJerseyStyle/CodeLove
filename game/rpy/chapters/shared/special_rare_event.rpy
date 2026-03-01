@@ -19,7 +19,7 @@ label check_special_rare_event:
         $ persistent.special_event_encountered = True
         jump special_rare_event_intro
     else:
-        jump execute_explore_random
+        jump execute_explore_random_normal
 
 label special_rare_event_intro:
     # 特殊事件開始

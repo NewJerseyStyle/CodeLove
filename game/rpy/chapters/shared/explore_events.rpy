@@ -40,7 +40,14 @@ init python:
 
 label execute_explore_random:
     # 首先檢查是否觸發特殊稀有事件（1% 機率，只觸發一次）
-    jump check_special_rare_event
+    if persistent.special_event_encountered:
+        jump execute_explore_random_normal
+    else:
+        jump check_special_rare_event
+
+label execute_explore_random_normal:
+    $ event_label = get_random_explore_event()
+    jump expression event_label
 
 # ============================================================================
 # 隨機事件 1: Rusty 的安全檢查

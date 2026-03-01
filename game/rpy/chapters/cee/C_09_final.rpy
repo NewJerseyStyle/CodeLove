@@ -7,7 +7,7 @@ label cee_C09_start:
     
     show cee normal at center
     
-    cee "（周圍的貨架正在劇烈晃動，紅色的警告燈在閃爍）"
+    narrator "（周圍的貨架正在劇烈晃動，紅色的警告燈在閃爍）"
     
     cee "記憶體碎片化嚴重。可用空間低於 1%。核心進程已進入緊急模式。"
     

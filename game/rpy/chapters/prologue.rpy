@@ -51,8 +51,6 @@ label prologue_approach_terminal:
     # 玩家靠近終端機
     narrator "你好奇地走向終端機..."
 
-    scene bg terminal_closeup
-
     narrator "你看到有一個按鈕：『開始掃描』"
 
     player "新玩具！我要狠狠地試試，然後評論一番他的設計"
@@ -64,9 +62,6 @@ label prologue_approach_terminal:
 
 label prologue_scan_start:
     # 開始掃描和數位化過程
-
-    # 屏幕變紅
-    scene bg terminal_warning
 
     narrator "你按下了按鈕..."
 
@@ -122,8 +117,6 @@ label prologue_scan_start:
     with Dissolve(2.0)
 
     narrator "當你睜開眼時，周圍是一片巨大的空間。"
-
-    pause 2.0
 
     narrator "就像一個無盡延伸的圖書館，但這裡不是書，而是一排排無盡的貨架。"
 
@@ -400,7 +393,7 @@ label prologue_continue_watching:
 
     cee "（繼續一個一個檢查，動作很快但機械）"
 
-    cee "（10 分鐘後）"
+    narrator "（10 分鐘後）"
 
     cee "找到了。"
 
@@ -429,7 +422,7 @@ label prologue_start_C01:
     cee "跟我來。"
 
     menu:
-        "準備好了（開始 C_01）":
+        "準備好了":
             jump cee_C01_start
 
         "我還需要一點時間":

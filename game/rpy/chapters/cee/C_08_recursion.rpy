@@ -46,9 +46,9 @@ label cee_08_ask_jawa:
     jump cee_08_suggest_alternative
 
 label cee_08_suggest_recursion:
-    player "Cee，我們寫一個叫 `open_box` 的動作。"
+    player "Cee，我們建立一個叫 `open_box` 的動作。"
     
-    player "如果盒子裡還有盒子，就讓 `open_box` 再去呼叫 `open_box` 處理那個小盒子。"
+    player "如果盒子裡還有盒子，就讓 `open_box` 再去觸發 `open_box` 動作處理那個小盒子。"
     
     player "這就是『遞迴』——動作會一直重複自己，直到找到核心為止！"
     

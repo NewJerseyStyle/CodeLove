@@ -197,6 +197,8 @@ label ending_final_ack:
 
     narrator "【鳴謝】"
 
+    narrator "讓這個想法出現的那個 Kashikoi & Kawaii 的傢伙"
+
     narrator "成就系統使用 Feniks 的 Achievements for Ren'Py 和 ImgFlip 的迷因圖"
 
     narrator "人物和背景由 Gemini 和 GLM 共同設計"

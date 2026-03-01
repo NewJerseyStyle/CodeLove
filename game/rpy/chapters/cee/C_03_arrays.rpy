@@ -59,7 +59,7 @@ label cee_C03_start:
         "問她為什麼不一開始就規定好長度？":
             jump cee_03_ask_why_no_length
             
-        "不管它，繼續強制寫入（危險）":
+        "不管它，繼續寫入":
             jump cee_03_risky_write
 
 label cee_03_ask_why_no_length:
