@@ -29,7 +29,7 @@ tl/common/
 *.swp
 *.swo
 *~
-*.md
+rpy/**/*.md
 
 # OS specific
 .DS_Store
