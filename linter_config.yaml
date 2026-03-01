@@ -91,8 +91,11 @@ ignored_images:
 
 # Ignored directories (files in these directories will not be scanned)
 ignored_directories:
+  - "rpy/examples"
   - "rpy/dlc/template_dlc/"
   - "rpy/dlc/"
+  - "rpy/dlc_support.rpy"
+  - "rpy/player_stats_examples.rpy"
 
 # Label naming conventions
 naming_conventions:
