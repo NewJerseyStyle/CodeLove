@@ -482,10 +482,20 @@ def parse_rpy_file(file_path: str, linter: StoryLinter):
             linter.add_jump(current_label, target_label)
 
         # Parse show/scene statements in current label block
-        # Match: show/scene followed by image name (stop at 'at' keyword or end of line)
+        # Match 1: Direct RPy show/scene statements
+        #   show cee normal at center
+        #   scene bg plaza_morning
         show_scene_match = re.match(r'^\s*(?:show|scene)\s+(.+?)(?:\s+at\s|$)', line)
         if show_scene_match:
             image_name = show_scene_match.group(1).strip()
+            linter.add_show_statement(current_label, image_name, file_path)
+
+        # Match 2: Python function calls (renpy.show / renpy.scene)
+        #   renpy.show("bg plaza_afternoon")
+        #   renpy.scene("bg memory_warehouse")
+        renpy_show_match = re.search(r'renpy\.(?:show|scene)\s*\(\s*["\']([^"\']+)["\']', line)
+        if renpy_show_match:
+            image_name = renpy_show_match.group(1).strip()
             linter.add_show_statement(current_label, image_name, file_path)
 
 
