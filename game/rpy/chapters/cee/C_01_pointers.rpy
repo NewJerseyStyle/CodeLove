@@ -75,8 +75,6 @@ label cee_01_suggest_pointer:
 
     cee "傳輸中..."
 
-    pause 1.0
-
     cee "（放下筆）接收方回報：已透過位址存取資料。"
 
     cee "耗時：6 秒。"
@@ -142,12 +140,13 @@ label cee_01_end:
     scene black
     with Dissolve(2.0)
 
-    narrator "C_01 章節完成。"
-
     teaching "你學會了：傳遞位址（指標）比複製整個資料內容（傳值）快得多，且節省空間。"
 
     teaching "指標就是資料的『位址標籤』。"
 
     pause 2.0
+
+    # 推進時間
+    $ advance_time_to_next_period()
 
     jump time_choice_menu

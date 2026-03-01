@@ -153,15 +153,17 @@ label ending_wise_choice:
 # ============================================================================
 
 label ending_source_rescue:
-    scene bg digital_breakdown
+    scene bg source_realm_void
     with hpunch # 劇烈震動
     
     narrator "原本平靜的資訊廣場突然開始劇烈扭曲，色彩如同過載的顯示器一般崩解。"
     
     narrator "你感到一陣強烈的噁心感，意識像是被某種巨大的力量強行抽離..."
     
-    scene bg laboratory
+    scene bg laboratory_dark
     with Fade(0.1, 0.5, 1.0)
+    
+    show source normal at center
     
     source "（用力拍打著終端機，一臉焦急）喂！醒醒！快醒醒！"
     
@@ -191,30 +193,11 @@ label ending_source_rescue:
     
     jump ending_final_ack
 
-label ending_demo:
-    scene bg digital_breakdown
-    with hpunch # 劇烈震動
-
-    narrator "眼前突然開始劇烈扭曲，色彩如同過載的顯示器一般崩解。"
-    
-    narrator "你感到一陣強烈的噁心感，意識像是被某種巨大的力量強行抽離..."
-    
-    scene bg laboratory
-    with Fade(0.1, 0.5, 1.0)
-    
-    source "（用力拍打著終端機，一臉焦急）喂！醒醒！快醒醒！"
-    
-    source "（嚴肅的表情）都說了不要亂動它，這個還沒做完有很多空缺的坑啦。"
-
-    source "不過你或許也留意到很多空白的圖片"
-
-    source "如果你能幫忙畫些插圖就好了"
-
-    jump ending_final_ack
-
 label ending_final_ack:
 
     narrator "【鳴謝】"
+
+    narrator "讓這個想法出現的那個 Kashikoi & Kawaii 的傢伙"
 
     narrator "成就系統使用 Feniks 的 Achievements for Ren'Py 和 ImgFlip 的迷因圖"
 

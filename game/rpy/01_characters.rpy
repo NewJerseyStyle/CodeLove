@@ -9,6 +9,8 @@
 define cee = Character(
     "Cee",
     color="#FF6B6B",  # 珊瑚紅 - 既有活力又專業
+    what_prefix="「",
+    what_suffix="」"
 )
 
 # Cee 表情系統（待實際立繪資源後啟用）
@@ -24,6 +26,8 @@ define cee = Character(
 define jawa = Character(
     "Jawa",
     color="#6B5B95",  # 深紫色 - 穩重、專業、可靠
+    what_prefix="「",
+    what_suffix="」"
 )
 
 # Jawa 表情系統
@@ -39,6 +43,8 @@ define jawa = Character(
 define rusty = Character(
     "Rusty",
     color="#FFA502",  # 橘色 - 年輕、充滿活力但謹慎
+    what_prefix="「",
+    what_suffix="」"
 )
 
 # Rusty 表情系統
@@ -53,12 +59,25 @@ define rusty = Character(
 define golly = Character(
     "Golly",
     color="#00D2D3",  # 淺藍色 - 輕鬆、直接、高效
+    what_prefix="「",
+    what_suffix="」"
 )
 
-# Golly 表情系統
-# define golly_neutral = Character("Golly", image="golly neutral", color="#00D2D3")
-# define golly_thinking = Character("Golly", image="golly thinking", color="#00D2D3")
-# define golly_multitasking = Character("Golly", image="golly multitasking", color="#00D2D3")
+# ============================================================================
+# 4.5. Py（Python 語言） - 靈活的自由主義者
+# ============================================================================
+
+define py = Character(
+    "Py",
+    color="#3776AB",  # Python 藍 - 靈活、優雅、隨性
+    what_prefix="「",
+    what_suffix="」"
+)
+
+# Py 表情系統
+# define py_neutral = Character("Py", image="py neutral", color="#3776AB")
+# define py_relaxed = Character("Py", image="py relaxed", color="#3776AB")
+# define py_lazy = Character("Py", image="py lazy", color="#3776AB")
 
 # ============================================================================
 # 5. 阿源（Source） - 現實世界的錨點
@@ -67,6 +86,8 @@ define golly = Character(
 define source = Character(
     "阿源",
     color="#26DE81",  # 綠色 - 現實、接地氣、穩定
+    what_prefix="「",
+    what_suffix="」"
 )
 
 # 阿源表情系統
@@ -81,6 +102,8 @@ define source = Character(
 define player = Character(
     "你",
     color="#FFEAA7",  # 淡黃色 - 中性、溫和
+    what_prefix="（",
+    what_suffix="）"
 )
 
 # 玩家內心獨白
@@ -112,6 +135,8 @@ define teaching = Character(
 define note = Character(
     "便條",
     color="#2C3E50",  # 深藍灰色 - 像紙張的顏色
+    what_prefix="",
+    what_suffix=""
 )
 
 # ============================================================================

@@ -6,111 +6,89 @@ label jawa_J01_start:
     scene bg contract_office
 
     show jawa normal at left
-    show rusty normal at right
+    show rusty normal at center
+    show py normal at right
 
     jawa "（手持一份清單，對著貨架上的包裹進行核對）"
 
-    rusty "（抱著一個發光的圓球，試圖塞進一個方形的盒子裡）"
+    py "（手裡抓著一個塞得滿滿的『混合箱』，試圖遞給 Jawa）"
 
-    rusty "奇怪...塞不進去..."
+    py "Jawa 姐，這是你要的資料清單，我把整數、字串和幾張照片都裝在一起了。多省事！"
 
-    jawa "（推了推眼鏡，平靜地看著 Rusty）"
+    jawa "（推了推眼鏡，眉頭微蹙）Py，你知道我不能接收這種『內容不明』的包裹。"
 
-    jawa "Rusty。那是 `String` (字串) 類型的資料。盒子是 `int` (整數) 類型的容量。"
+    jawa "我的接口規定了這裡只能放『整數』。你塞進去的字串會讓我的邏輯報錯。"
 
-    rusty "（用力擠壓）可是它們都是資料啊！為什麼不能放一起？"
+    show rusty shock at center
+    rusty "（臉色蒼白）這不只是報錯的問題！這會導致記憶體溢位！我根本不知道要分配多少空間給這堆...這堆『雜物』！"
 
-    jawa "（突然停止說話，眼神空白，手停在半空）"
+    py "（懶洋洋地嘆了口氣）你們這些靜態型別的人就是活得太累了。打開看一下不就知道是什麼了嗎？"
 
-    pause 3.0
+    py "（突然盯著 Rusty 的站位，眼神變得犀利）"
 
-    jawa "（若無其事地繼續）...安全性考量。類型不符會導致溢位。"
+    py "還有，Rusty，你往左移了兩個像素。"
 
-    jawa "（轉向你）你。空白指標。"
+    rusty "（愣住）啊？"
 
-    jawa "你覺得應該怎麼處理這堆不相容的資料？"
+    py "（語氣變得急促且充滿強迫症）退後！對齊！你的腳跟沒跟地板的縫隙平行！這會導致 IndentationError（縮排錯誤）！我的世界會崩潰的！"
+
+    rusty "（嚇得趕緊跳回原位）對、對不起！我這就對齊！"
+
+    jawa "（嘆氣，轉向你）你。空白指標。"
+
+    jawa "你看到了。Py 的『豐富』對我們來說是災難，而她的執著點...也非常奇特。"
+
+    jawa "你覺得應該怎麼處理這堆不符合規範的資料？"
 
     menu:
-        "建議使用強大的分類規則（強型別）":
+        "支持 Jawa 的嚴格分類（強型別安全）":
             jump jawa_01_suggest_strict
 
-        "建議將所有東西都包裝成一個通用容器（Object/Interface）":
+        "建議定義一套『標準容器規則』（Interface）":
             jump jawa_01_suggest_interface
 
-        "靜靜看著 Rusty 繼續嘗試":
-            jump jawa_01_continue_observing
-
 label jawa_01_suggest_strict:
-    player "我覺得應該聽 Jawa 的。不同的資料就該放在不同的盒子裡。"
+    player "我覺得應該聽 Jawa 的。Py，你的『混合箱』雖然方便，但我們沒辦法處理它。"
 
-    player "如果把字串塞進數字盒子，之後要計算時會出大問題的。"
+    player "如果把字串塞進數字盒子，Jawa 會因為無法執行加法而當機的。"
 
-    jawa "（點頭，眼神流露出一絲讚許）"
+    jawa "（點頭）正確。這就是型別檢查的價值：在錯誤發生前攔截它。"
 
-    jawa "正確。強類型確保了資料的純淨。"
+    jawa "（遞給 Py 一套有顏色標記的盒子）"
 
-    jawa "（遞給 Rusty 一套有顏色標記的盒子）"
+    jawa "藍色放數字。紅色放文字。而且，請務必...對齊。"
 
-    jawa "藍色放數字。紅色放文字。嚴格執行。"
+    py "（聳聳肩）好吧，既然是在 Jawa 的地盤。不過那個盒子沒放正，歪了 5 度...（強迫症發作中）"
 
-    rusty "（嘆口氣，開始重新分類）好吧...雖然麻煩，但確實清楚多了。"
-
-    # 追蹤：學會的概念
+    # 追蹤
     $ track_learned_concept("strong_typing")
-
     $ jawa_relationship = "VERIFIED"
     $ track_affection("jawa", 10)
+    $ track_affection("rusty", 5)
 
     jump jawa_01_end
 
 label jawa_01_suggest_interface:
-    player "如果資料種類太多，每個都準備盒子太累了。"
+    player "Jawa，既然 Py 想要靈活，我們不如定義一個『通用容器規則』？"
 
-    player "不如定義一個『標準規格』？只要符合這個規格的東西，都能放進通用盒子裡。"
+    player "只要盒子標記為『可存取物件』，不管是數字還是文字都能放，但 Py 必須在裡面附上一張說明書。"
 
-    jawa "（思考 2 秒）"
-
-    jawa "（突然停止說話，眼神空白，手停在半空）"
+    jawa "……"
 
     pause 3.0
 
-    jawa "（若無其事地繼續）介面 (Interface) 概念。"
+    jawa "（若無其事地繼續）...介面 (Interface) 模式。"
 
-    jawa "定義共同特徵，忽略具體差異。"
+    jawa "允許不同型別的資料共存，但必須符合統一的呼叫契約。這能解決 Py 的混亂。"
 
-    jawa "（翻開手冊，快速勾選幾項）"
+    py "（眼睛一亮）喔！這聽起來不錯，只要我對齊了說明書，你們就能用了？"
 
-    jawa "只要是『可儲存物件』，就視為同一類。"
+    rusty "（小聲）雖然還是有點危險，但至少有了『契約』，系統就不會隨便崩潰了..."
 
-    rusty "（眼睛一亮）喔！所以我只要幫這些資料貼上『可儲存』標籤，就能用同一個大箱子裝了？"
-
-    jawa "理論上可行。靈活性增加，但存取時需要額外確認類型。"
-
-    jawa "（看著你）很有遠見。這在處理複雜系統時很有效率。"
-
-    # 追蹤：學會的概念
+    # 追蹤
     $ track_learned_concept("java_interfaces")
-
     $ jawa_relationship = "RELIABLE"
     $ track_affection("jawa", 15)
-
-    jump jawa_01_end
-
-label jawa_01_continue_observing:
-    narrator "你決定不干涉，看著 Rusty 滿頭大汗地嘗試。"
-
-    jawa "（在旁邊翻閱手冊，不時發出輕微的嘆息）"
-
-    rusty "（終於把圓球塞進去了，但盒子裂開了）"
-
-    jawa "（看著裂開的盒子）類型衝突。資料損毀。"
-
-    jawa "（轉頭看著你）看見了嗎？這就是缺乏規則的後果。"
-
-    # 追蹤：觀察
-    $ track_choice("observation", is_optimal=False)
-
-    $ jawa_relationship = "FORMAL_CONTACT"
 
     jump jawa_01_end
 
@@ -118,12 +96,11 @@ label jawa_01_end:
     scene black
     with Dissolve(2.0)
 
-    narrator "J_01 章節完成。"
-
-    teaching "你學會了：Java 強調類型的安全性（強型別）。不同類型的資料不能混用。"
-
-    teaching "但透過『介面』(Interface)，可以讓不同的資料以統一的規格被處理。"
+    teaching "你學會了：Java 結合了強型別的安全與介面 (Interface) 的靈活性。這讓它既能保持嚴謹，又能處理來自像 Python 這種動態語言的複雜資料需求。"
 
     pause 2.0
+
+    # 推進時間
+    $ advance_time_to_next_period()
 
     jump time_choice_menu
