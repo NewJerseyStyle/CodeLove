@@ -1,22 +1,188 @@
-# Code Love: Source Realm
-> "Where every syntax error is a heartbreak."
+# 源界 (Source Realm)
 
-This game is a **Galgame-styled RPG** designed to teach programming concepts through the high-stakes world of digital dating. Inspired by a friend who wondered why learning to code couldn't be as dramatic as a visual novel, this project is a remake and a tribute to our friendship.
+> 一個以戀愛冒險遊戲為形式的程式語言教學實驗
 
----
-
-## 💖 The Premise
-
-In most Galgames, you choose the right words to win a heart. In this game, you choose the right **logic**.
-
-If you fail to understand a programming concept or provide the wrong solution, you don't just get a "Game Over"—you experience the soul-crushing sting of romantic rejection. It turns out that girls (and compilers) have very little patience for sloppy code.
-
-## 🛠 Features
-
-* **Failed Logic, Failed Love:** Branching narratives where your "Affection Points" (AP) are tied directly to your understanding of variables, loops, and data structures.
-* **The "Punishment" System:** Incorrect answers lead to specific narrative consequences designed to help you remember the concept next time.
-* **The Remake:** Improved mechanics, cleaner UI, and more rigorous "coding dates" than the original version.
+**[English Version / 英文版](README_EN.md)** | 繁體中文
 
 ---
 
-> "Why can't we play a Galgame to learn programming by failing to get the girls and being punished for not knowing the right concepts?" — The friend who started it all 💖
+## 💖 遊戲介紹
+
+大多數戀愛冒險遊戲中，你選擇正確的話語來贏得心。在這個遊戲中，你選擇正確的**邏輯**。
+
+在**源界**（Source Realm），程式語言被具象化為擁有個性、優點和限制的角色，反映真實世界的語言特性。你的目標不是背誦語法，而是理解它們的本質，並與它們合作。
+
+---
+
+## 🛠️ 特色功能
+
+### 核心遊戲機制
+
+* **邏輯錯誤，戀愛失敗**：分支敘事，你的「好感度」直接與語法、指標、記憶體管理和資料結構的理解掛鉤
+* **後果系統**：錯誤答案會產生波及整個世界的敘事後果，而不只是簡單的 Game Over。記憶體洩漏不只是讓 Cee 變慢，它會淹沒她的工作空間並毀了 Rusty 的一天
+* **算法互動系統**：角色擁有強大的執行能力但缺乏規劃技巧。你觀察它們的暴力解法（O(n²) 或更糟），然後提供優化算法，它們會以驚人的效率立即實現
+* **並行時間線系統**：你的源界時間有限。每個時間段，你必須選擇要追蹤哪條故事線。其他故事線會在你不在時繼續進行——無論你選哪條路，你的錯誤後果都會持續
+* **「懲罰」系統**：錯誤答案會導致特定的敘事後果，幫助你下次記住概念
+
+### v0.1.4：DLC 擴充系統 🎉
+
+**新功能！** 源界現支援社群 DLC 擴充！
+
+- **建立新語言角色**：設計你自己的程式語言角色，擁有獨特的個性特質和機制
+- **建立自定區域**：設計城鎮、區域或建築群，擁有自己的內部邏輯和選單
+- **與社群分享**：將 DLC 打包為 ZIP——使用者只需解壓縮到 `game/` 目錄即可遊玩
+
+**範例 DLC：**
+- **CodeLove-Py-DLC**：Python 語言角色「Py」與禪宗花園區域
+  - 包含 PY_01（縮排）、PY_02（列表推導式）、PY_03（GIL 與並行）
+  - 下載：[GitHub Releases](https://github.com/NewJerseyStyle/CodeLove-Py-DLC/releases)
+
+---
+
+## 📖 故事
+
+你在空無一人的實驗室中，發現一張便條：
+
+> "去了便利店。馬上回來。別亂碰東西。"
+
+好奇心驅使你走向終端機。掃描觸發了，突然你被數位化——程式邏輯具象化為物理現實的平行空間。
+
+你降落在 Cee 的記憶倉庫，正當她凍結時——這是對未預期輸入的經典「Segmentation Fault → Core Dump」反應。當她重啟時，她的第一句話不是「你還好嗎？」——而是：
+
+> "你的型別是什麼？"
+
+這不是問候。這是必要的型別檢查。歡迎來到源界。
+
+---
+
+## 👥 角色
+
+每個角色代表一個程式語言，擁有不可改變的核心特質——它們的個性不會為了適應你而改變。你必須學會以它們原本的樣子與它們合作。
+
+| 角色 | 語言 | 核心特質 | 職業 |
+|------|------|----------|------|
+| **Cee** | C | 手動記憶體管理、無 GC、直接硬體存取、完全信任操作者 | 記憶倉庫管理員 |
+| **Jawa** | Java | JVM 字節碼、自動 GC、強型別、啟動慢但跨平台 | 契約局架構師 |
+| **Rusty** | Rust | 所有權系統、編譯時安全檢查、無 GC 但絕對可靠 | 記憶倉庫見習生 |
+| **Golly** | Go | Goroutine、GC、簡單語法、編譯快、同時處理多件事 | 平行系統工程師 |
+| **Py** | Python | 動態型別、縮排語法、GIL、追求簡單與優雅 | 自動化腳本師 |
+
+### 語言特性（不可改變）
+
+| 語言 | 不會改變的東西 | 角色行為 |
+|------|--------------|----------|
+| C | 手動記憶體、無安全網 | 接受任何指令而不質疑；後果是你的問題 |
+| Java | JVM、GC 暫停、強型別 | 需要先定義規格；有不可預測的 GC 凍結時段 |
+| Rust | 所有權系統、編譯時安全 | 在同意任何事情前嚴格檢查誰擁有資源；一旦承諾，絕對可靠 |
+| Go | Goroutine、簡單性 | 實用且直接；同時處理多項任務；不喜歡繁文縟節 |
+| Python | 縮排是語法、GIL | 極度靈活但對格式敏感；某些任務有效能瓶頸 |
+
+---
+
+## 🎮 如何遊玩
+
+### 安裝
+
+1. 下載最新版本（從 [GitHub Releases](https://github.com/NewJerseyStyle/CodeLove/releases/latest) 或 [itch.io](https://releaser.itch.io/source-realm)）
+2. 解壓縮並執行 `SourceRealm.exe`（Windows）或對應的執行檔
+3. 不需要額外依賴（Ren'Py 是獨立的）
+
+### 核心遊玩循環
+
+```
+序章（現實實驗室）
+    ↓
+意外數位化 → 進入源界
+    ↓
+C_01：指標教學（與 Cee 的第一次互動）
+    ↓
+廣場（時間選擇選單）
+    ├── 前往記憶倉庫（Cee 路線）
+    ├── 前往契約局（Jawa 路線）
+    ├── 前往其他區域（DLC 區域） ← v0.1.4 新增
+    ├── 在廣場休息（隨機相遇）
+    └── 探索源界（隨機事件）
+```
+
+### 重要提示
+
+- **理解勝於背誦**：重點是理解為什麼語言這樣設計，而不是背誦語法
+- **用對方的語言說話**：不同的語言有不相容的思維模式。用 Java 的 GC 概念與 C 溝通會導致危險的誤解
+- **後果不只是你的**：糟糕的代碼會波及其他角色
+
+---
+
+## 🏆 結局
+
+| 結局 | 條件 | 核心訊息 |
+|------|------|---------|
+| **語言夥伴** | 完成任何一條語言線，關係達到 RELIABLE+ | 學會一門語言讓它成為你的思考工具 |
+| **真正理解** | 完成兩條語言線，參與所有共同事件 | 理解不同語言的哲學，知道何時使用哪個 |
+| **仿生紀元** | 所有角色達到最高好感度 | 致敬資深程式設計師：沉迷編程的極致幻想 |
+| **隱藏結局** | ？？？ | ？？？ |
+
+---
+
+## 📚 文檔
+
+| 文件 | 描述 |
+|------|------|
+| [docs/CHARACTERS.md](docs/CHARACTERS.md) | 角色設計文檔 |
+| [docs/DLC_DEVELOPER_GUIDE.md](docs/DLC_DEVELOPER_GUIDE.md) | 完整 DLC 開發指南 |
+| [docs/DLC_QUICK_REFERENCE.md](docs/DLC_QUICK_REFERENCE.md) | DLC 快速參考手冊 |
+| [CodeLove-DLC](https://github.com/NewJerseyStyle/CodeLove-DLC) | DLC 範本專案 |
+| [CodeLove-Py-DLC](https://github.com/NewJerseyStyle/CodeLove-Py-DLC) | Python DLC 完整範例 |
+
+---
+
+## 🔌 DLC 開發
+
+### 建立你自己的 DLC
+
+我們邀請社群建立自定 DLC！你可以建立：
+
+- **新語言角色**：設計基於 JavaScript、Ruby、Swift 或任何語言的角色
+- **自定區域**：建立城鎮、區域或建築群，擁有自己的選單和事件
+- **自定事件**：設計章節和故事線，教導特定的程式設計概念
+- **獨特結局**：建立與你的角色綁定的特殊結局
+
+### 開始使用
+
+1. 下載 [DLC 範本](https://github.com/NewJerseyStyle/CodeLove-DLC)
+2. 閱讀[開發指南](../DLC_DEVELOPER_GUIDE.md)
+3. 研究 [Python DLC 範例](https://github.com/NewJerseyStyle/CodeLove-Py-DLC)
+4. 打包為 ZIP 並與社群分享！
+
+**模組系統設計簡單：**
+- 不需要修改主遊戲文件
+- DLC 自包含在自己的資料夾中
+- 簡單的 ZIP 解壓縮即可安裝
+
+---
+
+## 💻 系統需求
+
+- **作業系統**：Windows / macOS / Linux
+- **依賴**：無（Ren'Py 是獨立的）
+- **儲存空間**：約 500 MB（包含所有資源）
+
+---
+
+## 📜 授權
+
+這個遊戲是一個教育性開源專案。歡迎社群貢獻和 DLC 內容！
+
+---
+
+## 💬 回饋與貢獻
+
+- **錯誤回報**：[GitHub Issues](https://github.com/NewJerseyStyle/CodeLove/issues)
+- **DLC 提交**：歡迎你的創作！請查看 [docs/DLC_DEVELOPER_GUIDE.md](docs/DLC_DEVELOPER_GUIDE.md)
+- **討論**：[GitHub Discussions](https://github.com/NewJerseyStyle/CodeLove/discussions)
+
+我們特別期待社群 DLC——如果你創作了令人驚豔的內容，讓我們知道！
+
+---
+
+> "為什麼不能玩一個 Galgame 來學習程式設計，透過追求女孩失敗並因不知道正確概念而受罰？"
+> — 一切始於這句話的朋友 💖
