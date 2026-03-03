@@ -3,11 +3,19 @@
 # ============================================================================
 
 # ============================================================================
+# 1. 版本信息
+# ============================================================================
+
+define config.version = "0.1.0"
+define config.name = "Source Realm"
+define config.developer = "CodeLoveGame Team"
+
+# ============================================================================
 # 2. 全局變量 - 時間系統
 # ============================================================================
 
 # 源界時間 (Source Time, ST)
-# ST 00-38 是遊戲主要時段
+# ST 00-38 是遊戲主要進度指標
 default source_time = 0
 
 # 時間是否正在流動
@@ -65,16 +73,6 @@ default cross_language_error_occurred = False
 default cross_language_error_type = ""
 
 # 當前正在顯示的後果類型（用於教學卡片）
-default current_consequence_type = ""
-
-# 當前教學行（用於循環顯示教學內容）
-default current_teaching_line = ""
-
-# 當前反應的角色和後果類型（用於 show_consequence_reaction）
-default current_reaction_character = ""
-default current_reaction_consequence = ""
-default current_reaction_line = ""
-
 # ============================================================================
 # 6. 全局變量 - 假日系統
 # ============================================================================
@@ -153,6 +151,25 @@ default true_end_unlocked = False
 
 # 是否達成好結局條件（兩條語言線都完成）
 default good_end_unlocked = False
+
+# ============================================================================
+# 9.5. 全局變量 - 名聲與心動系統 (Reputation & Crush)
+# ============================================================================
+
+# 各語言掌握度 (0-100)
+default mastery_cee = 0
+default mastery_jawa = 0
+default mastery_rusty = 0
+default mastery_py = 0
+
+# 心動狀態 (Crush Status)
+default crush_cee = False
+default crush_jawa = False
+default crush_rusty = False
+default crush_py = False
+
+# 傳聞等級 (玩家在源界的知名度)
+default source_realm_reputation = 0
 
 # ============================================================================
 # 10. 系統函數 - 時間管理
