@@ -113,10 +113,8 @@ Your choices affect which ending you get:
 | Ending | How to Unlock |
 |--------|---------------|
 | **Language Partner** (Normal) | Complete any language line, reach RELIABLE+ relationship |
-| **True Understanding** (Good) | Complete two language lines, participate in all shared events |
-| **Synthetic Era** (True) | All characters reach maximum affection (tribute to veteran programmers) |
-| **Lost** (Bad A) | Reality weeks pass, no route reaches FUNCTIONAL |
-| **Forever Stay** (Bad B) | Choose hidden option "Don't want to go back" |
+| **????** (Secret) | All characters reach maximum affection (tribute to veteran programmers) |
+| **Nothing happened** | No route reaches FUNCTIONAL |
 
 ---
 
@@ -128,7 +126,7 @@ Your choices affect which ending you get:
 - **Storage**: ~500 MB
 
 ### Installation
-1. Download latest version (below)
+1. Download [latest version](https://github.com/NewJerseyStyle/CodeLove/releases/latest)
 2. Extract and run `SourceRealm.exe` (Windows) or corresponding executable
 3. Start playing!
 
@@ -148,7 +146,7 @@ Your choices affect which ending you get:
 | [DLC Developer Guide](https://github.com/NewJerseyStyle/codeLoveGame-GLM/blob/main/docs/DLC_DEVELOPER_GUIDE.md) | Complete step-by-step guide |
 | [DLC Quick Reference](https://github.com/NewJerseyStyle/codeLoveGame-GLM/blob/main/docs/DLC_QUICK_REFERENCE.md) | One-page reference |
 | [DLC Template](https://github.com/NewJerseyStyle/CodeLove-DLC) | Ready-to-use template |
-| [Python DLC Example](https://github.com/NewJerseyStyle/CodeLove-Py-DLC) | Complete working example |
+| [DLC Example](https://github.com/NewJerseyStyle/CodeLove-Py-DLC) | Complete working example |
 
 **What You Can Create**:
 - New programming language characters
@@ -158,19 +156,9 @@ Your choices affect which ending you get:
 
 ---
 
-## 🌟 Reviews & Feedback
-
-"This game made me finally understand pointers—they're not just scary memory addresses, they're a way to pass messages efficiently!" — Anonymous Playtester
-
-"The consequence system is brilliant. When I caused a buffer overflow that flooded Rusty's workspace, I finally understood why bounds checking matters." — DevForum User
-
----
-
 ## 📞 Community & Support
 
-- **GitHub**: [SourceRealm](https://github.com/NewJerseyStyle/codeLoveGame-GLM)
-- **Discussions**: Share ideas, report bugs, discuss DLC
-- **Discord**: [Join our server](#)
+- **[Discussions](https://github.com/NewJerseyStyle/CodeLove/discussions)**: Share ideas, report bugs, discuss DLC
 
 **We're actively looking for community DLC creators!** If you build something amazing, let us know—we may feature it on the main page!
 
@@ -196,16 +184,6 @@ Your choices affect which ending you get:
 
 ---
 
-## 🎯 What's Next?
-
-**Planned Features:**
-- JavaScript DLC (community contribution welcome!)
-- Enhanced visual effects for consequence system
-- DLC marketplace/community hub
-- Extended main storyline chapters
-
----
-
 ## 💡 Why This Game Exists
 
 Most programming tutorials are dry, abstract, and disconnected from real use. They teach syntax without philosophy, rules without reason.
@@ -226,10 +204,6 @@ It's a tribute to complexity and beauty of programming languages, wrapped in the
 
 > "Why can't we play a Galgame to learn programming by failing to get girls and being punished for not knowing right concepts?"
 > — The friend who started it all 💖
-
----
-
-**Download now and find your perfect language partner in the Source Realm!** 🌐
 
 ---
 
