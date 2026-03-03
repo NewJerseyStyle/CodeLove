@@ -6,7 +6,7 @@
 # 1. 版本信息
 # ============================================================================
 
-define config.version = "0.1.0"
+define config.version = "0.1.4"
 define config.name = "Source Realm"
 define config.developer = "CodeLoveGame Team"
 
