@@ -777,8 +777,6 @@ label mini_DLC01_start:
 ### 10.2 完整章節模板
 
 ```python
-# rpy/dlc/template/events/DLC_01_full.rpy
-
 # ============================================================================
 # DLC_01: 完整章節模板
 # ============================================================================
@@ -915,6 +913,8 @@ label dlc_DLC01_end_neutral:
     jump end_time_period
 ```
 
+GitHub repository 開發模板： https://github.com/NewJerseyStyle/CodeLove-DLC
+
 ---
 
 ## 附錄：現有角色參考
@@ -943,4 +943,3 @@ label dlc_DLC01_end_neutral:
 
 **版本**: 1.0.0
 **最後更新**: 2025-02-25
-**維護者**: CodeLoveGame Team
