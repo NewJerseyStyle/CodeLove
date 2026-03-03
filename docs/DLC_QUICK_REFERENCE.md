@@ -211,4 +211,4 @@ default my_char_relationship = "UNMET"
 
 ## 完整範例
 
-見 `docs/CodeLove-Py-DLC/` - 完整可運行的區域導向 DLC 範例
+見 [CodeLove-Py-DLC](https://github.com/NewJerseyStyle/CodeLove-Py-DLC) - 完整可運行的區域導向 DLC 範例
