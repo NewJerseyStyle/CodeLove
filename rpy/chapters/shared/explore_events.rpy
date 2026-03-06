@@ -62,7 +62,6 @@ label event_rusty_safety_check:
     show rusty shock
     rusty "啊！沒、沒什麼，只是在處理一個生命週期的問題。"
     $ track_affection("rusty", 5)
-    hide rusty
     jump end_time_period
 
 # ============================================================================
@@ -76,7 +75,6 @@ label event_py_one_liner:
     py "result = [[x**2 for x in matrix if x %% 2 == 0]]。好了，去玩吧。"
     py "（注意到你）喲，新來的。代碼就該像午睡一樣簡單。"
     $ track_affection("py", 5)
-    hide py
     jump end_time_period
 
 # ============================================================================
@@ -149,7 +147,6 @@ label event_golly_concurrent_pizza:
     golly "一千個 Goroutine，啟動！"
     narrator "瞬間，無數個 Golly 的虛影閃過，提著披薩盒消失在不同的巷子裡。"
     $ track_affection("golly", 5)
-    hide golly
     jump end_time_period
 
 # ============================================================================
@@ -179,7 +176,6 @@ label event_jawa_gc_truck:
     narrator "所有路人都停下了腳步（Stop the World）。"
     show jawa normal at center
     jawa "（推眼鏡）別緊張，只是例行的記憶體清理。"
-    hide jawa
     jump end_time_period
 
 # ============================================================================
@@ -192,7 +188,6 @@ label event_cee_memory_leak_waterfall:
     narrator "Cee 站在一個不斷湧出藍色數據流的裂縫前。"
     cee "位址溢出。某個進程忘了執行 free()。這就是記憶體洩漏。"
     $ track_affection("cee", 5)
-    hide cee
     jump end_time_period
 
 # ============================================================================
@@ -205,7 +200,6 @@ label event_py_zen_garden:
     py "來，念一遍。《The Zen of Python》。"
     py "『Beautiful is better than ugly.』"
     $ track_affection("py", 5)
-    hide py
     jump end_time_period
 
 # ============================================================================
@@ -234,7 +228,6 @@ label event_rusty_borrow_panic:
     show rusty shock at center
     rusty "不不不！你不能同時擁有兩個可變借用！這會導致未定義行為！"
     $ track_affection("rusty", 10)
-    hide rusty
     jump end_time_period
 
 # ============================================================================
@@ -699,7 +692,6 @@ label encounter_cee:
         cee "（在你身邊坐下，保持一小段距離）"
         cee "短暫的休眠。有效率。我陪你一會兒。"
     $ track_affection("cee", 2)
-    hide cee
     jump end_time_period
 
 # ----------------------------------------------------------------------------
@@ -714,7 +706,6 @@ label encounter_jawa:
         jawa "（手拿一杯熱咖啡，遞給你一罐）"
         jawa "適度的異步等待有助於系統穩定. 辛苦了。"
     $ track_affection("jawa", 2)
-    hide jawa
     jump end_time_period
 
 # ----------------------------------------------------------------------------
@@ -725,7 +716,6 @@ label encounter_rusty:
     rusty "嘿！是在進行安全檢查嗎？"
     rusty "（小聲）還是說... 你累了？如果你睡著了，我會幫你守著，不讓別人隨便『借用』你的錢包的！"
     $ track_affection("rusty", 5)
-    hide rusty
     jump end_time_period
 
 # ----------------------------------------------------------------------------
@@ -737,7 +727,6 @@ label encounter_py:
     py "這才對嘛。生活就該像我的代碼一樣，能坐著絕對不站著，能躺著絕對不坐著。"
     py "縮排四格，給我留點位置。"
     $ track_affection("py", 5)
-    hide py
     jump end_time_period
 
 # ============================================================================
