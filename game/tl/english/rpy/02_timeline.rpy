@@ -148,3 +148,71 @@ translate english strings:
     old "看看其他地方 - 漫步源界"
     new "Look at other places - Stroll around Source Realm"
 
+# TODO: Translation updated at 2026-03-05 23:43
+
+# game/rpy/02_timeline.rpy:217
+translate english time_choice_menu_d2ef693e:
+
+    # narrator "【[time_description]】你站在資訊廣場中央。"
+    narrator ""
+
+# game/rpy/02_timeline.rpy:287
+translate english enter_dlc_region_9e102fd7:
+
+    # narrator "這個區域還在建設中..."
+    narrator ""
+
+# game/rpy/02_timeline.rpy:294
+translate english execute_location_check_8b81cbc0:
+
+    # narrator "源界的核心正在重組，所有區域暫時封鎖。你應該去參與最終評估。"
+    narrator ""
+
+# game/rpy/02_timeline.rpy:308
+translate english execute_location_check_e2632a57:
+
+    # narrator "記憶倉庫現在不對外開放，Cee 似乎不在這裡。"
+    narrator ""
+
+# game/rpy/02_timeline.rpy:321
+translate english execute_location_check_74a5f765:
+
+    # narrator "契約局的辦事處鎖著門，Jawa 應該在忙別的事。"
+    narrator ""
+
+# game/rpy/02_timeline.rpy:333
+translate english execute_rest_7ff01c58:
+
+    # narrator "你感到一股不可抗拒的吸力從源界中心傳來..."
+    narrator ""
+
+translate english strings:
+
+    # game/rpy/02_timeline.rpy:220
+    old "前往結局評估"
+    new ""
+
+    # game/rpy/02_timeline.rpy:224
+    old "前往共同事件：[shared]"
+    new ""
+
+    # game/rpy/02_timeline.rpy:228
+    old "前往記憶倉庫"
+    new ""
+
+    # game/rpy/02_timeline.rpy:233
+    old "前往契約局"
+    new ""
+
+    # game/rpy/02_timeline.rpy:238
+    old "前往其他區域"
+    new ""
+
+    # game/rpy/02_timeline.rpy:243
+    old "在廣場坐一會兒"
+    new ""
+
+    # game/rpy/02_timeline.rpy:248
+    old "在源界隨處逛逛"
+    new ""
+

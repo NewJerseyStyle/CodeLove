@@ -712,3 +712,23 @@ translate english strings:
     old "我還需要一點時間"
     new "I need a bit more time"
 
+# TODO: Translation updated at 2026-03-05 23:43
+
+# game/rpy/chapters/prologue.rpy:396
+translate english prologue_continue_watching_dbf0fdae:
+
+    # narrator "（10 分鐘後）"
+    narrator ""
+
+# game/rpy/chapters/prologue.rpy:441
+translate english prologue_end_e418b270:
+
+    # narrator "現在，你需要在源界中找到回家的路……又或者展開冒險。"
+    narrator ""
+
+translate english strings:
+
+    # game/rpy/chapters/prologue.rpy:425
+    old "準備好了"
+    new ""
+

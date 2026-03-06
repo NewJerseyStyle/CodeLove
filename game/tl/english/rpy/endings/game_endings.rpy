@@ -396,3 +396,47 @@ translate english ending_final_ack_cd594c74:
     # narrator "劇情和人物形象由作者規劃，GLM 起草， Gemini 編輯"
     narrator "Plot and character images planned by author, drafted by GLM, edited by Gemini"
 
+# TODO: Translation updated at 2026-03-05 23:43
+
+# game/rpy/endings/game_endings.rpy:67
+translate english ending_good_18435da6:
+
+    # source "（看到你醒來）呼，你可算醒了！"
+    source ""
+
+# game/rpy/endings/game_endings.rpy:172
+translate english ending_source_rescue_150543e4:
+
+    # player "我在那邊...待了..."
+    player ""
+
+# game/rpy/endings/game_endings.rpy:174
+translate english ending_source_rescue_5b64fbb3:
+
+    # source "（苦笑著指指牆上的日曆）幾十個小時？兄弟，現實世界已經過了整整四天了。"
+    source ""
+
+# game/rpy/endings/game_endings.rpy:180
+translate english ending_source_rescue_e1a84231:
+
+    # "主管的信息" "你這四天去哪了？電話不接郵件不回！"
+    "主管的信息" ""
+
+# game/rpy/endings/game_endings.rpy:181
+translate english ending_source_rescue_b3aceeca:
+
+    # "主管的信息" "考慮到你嚴重的曠工行為，這個月的績效獎金全扣，工資扣除四天！再有下次就捲舖蓋走人！"
+    "主管的信息" ""
+
+# game/rpy/endings/game_endings.rpy:183
+translate english ending_source_rescue_264010cd:
+
+    # source "（縮了縮脖子，小聲對你說）歡迎回到現實世界... 雖然這裡殘酷得多。"
+    source ""
+
+# game/rpy/endings/game_endings.rpy:194
+translate english ending_final_ack_0f28ceec:
+
+    # narrator "提出這個想法的那個 Kashikoi & Kawaii 的傢伙"
+    narrator ""
+
