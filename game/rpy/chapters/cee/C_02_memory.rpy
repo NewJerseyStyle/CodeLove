@@ -92,7 +92,7 @@ label cee_02_suggest_manual_cleanup:
         for consequence in store.active_consequences:
             if consequence['type'] == 'memory_leak':
                 clear_consequence(consequence['id'])
-                narrator "（Cee 的工作空間變得乾淨了）"
+                renpy.say("narrator", "（Cee 的工作空間變得乾淨了）")
     
     jump cee_02_end
 

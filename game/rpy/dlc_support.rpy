@@ -4,13 +4,15 @@
 #
 # 此文件提供 DLC 擴展所需的介面和鉤子。
 # DLC 開發者應參考 docs/DLC_DEVELOPER_GUIDE.md
+#
+# 注意：此文件使用 init -999 確保在 DLC 之前載入
 # ============================================================================
 
 # ============================================================================
 # 1. DLC 註冊系統
 # ============================================================================
 
-init python:
+init -999 python:
     # 已註冊的 DLC 列表
     if 'registered_dlcs' not in dir():
         registered_dlcs = []
@@ -68,13 +70,13 @@ init python:
 # 2. 動態結局系統
 # ============================================================================
 
-init python:
-    # 是否禁用主線結局強制觸發（DLC 可設置）
-    default dlc_disable_main_ending = False
+# 是否禁用主線結局強制觸發（DLC 可設置）
+default dlc_disable_main_ending = False
 
-    # DLC 自定義結局時間（超過此時間才觸發結局評估）
-    default dlc_custom_ending_threshold = 36
+# DLC 自定義結局時間（超過此時間才觸發結局評估）
+default dlc_custom_ending_threshold = 36
 
+init -999 python:
     def check_all_endings():
         """
         檢查所有結局（主線 + DLC）
@@ -88,9 +90,9 @@ init python:
                 return result
 
         # 2. 檢查是否應延後主線結局
-        if dlc_disable_main_ending:
+        if store.dlc_disable_main_ending:
             # DLC 請求延後結局
-            if store.source_time < dlc_custom_ending_threshold:
+            if store.source_time < store.dlc_custom_ending_threshold:
                 return "none"
 
         # 3. 使用主線結局邏輯
@@ -103,8 +105,8 @@ init python:
         用於 time_choice_menu 中判斷是否顯示結局選項
         """
         # 如果有 DLC 禁用主線結局，使用 DLC 閾值
-        if dlc_disable_main_ending:
-            return store.source_time >= dlc_custom_ending_threshold
+        if store.dlc_disable_main_ending:
+            return store.source_time >= store.dlc_custom_ending_threshold
 
         # 否則使用主線邏輯 (ST 36+)
         return store.source_time >= 36
@@ -138,7 +140,7 @@ init python:
 # 3. 時間線擴展系統
 # ============================================================================
 
-init python:
+init -999 python:
     def get_extended_timeline():
         """
         獲取擴展後的時間線（主線 + DLC）
@@ -174,7 +176,7 @@ init python:
 # 4. 角色擴展系統
 # ============================================================================
 
-init python:
+init -999 python:
     # DLC 角色註冊表
     if 'dlc_characters' not in dir():
         dlc_characters = {}
@@ -217,63 +219,91 @@ init python:
         return all_chars
 
 # ============================================================================
-# 5. 場景擴展系統
+# 5. 區域擴展系統
+# ============================================================================
+#
+# DLC 設計規範：
+# - DLC 應有自己的區域（小鎮、街區、建築群）
+# - 從廣場可以前往該區域入口
+# - 進入區域後，DLC 自己管理內部的地點和事件
+# - 區域有自己的時間線，不強制和主線對齊
 # ============================================================================
 
-init python:
-    # DLC 場景註冊表
-    if 'dlc_locations' not in dir():
-        dlc_locations = {}
+init -999 python:
+    # DLC 區域註冊表
+    if 'dlc_regions' not in dir():
+        dlc_regions = {}
+
+    def register_dlc_region(region_id, region_info):
+        """
+        註冊 DLC 區域
+
+        區域是 DLC 的入口點，代表一個獨立的區域（小鎮、街區等）。
+        DLC 內部應有自己的地點菜單和時間線管理。
+
+        region_info 應包含:
+        - name: 顯示名稱（如 "Zen Garden 區域"）
+        - description: 區域描述
+        - dlc_id: 所屬 DLC ID
+        - entry_label: 進入區域時跳轉的 label
+        - unlock_condition: 解鎖條件函數（可選，預設永遠解鎖）
+        - hub_bg: 區域樞紐背景圖片（可選）
+        """
+        dlc_regions[region_id] = region_info
 
     def register_dlc_location(location_id, location_info):
         """
-        註冊 DLC 場景
+        註冊 DLC 區域內的地點（舊接口，保留兼容）
 
-        location_info 應包含:
-        - name: 顯示名稱
-        - description: 描述
-        - bg_image: 背景圖片
-        - available_from: 可從哪些地方前往
-        - unlock_condition: 解鎖條件函數
+        建議新 DLC 使用 register_dlc_region() 註冊區域入口，
+        然後在區域內部管理自己的地點。
         """
-        dlc_locations[location_id] = location_info
+        dlc_regions[location_id] = location_info
 
     def get_available_locations():
-        """獲取當前可用的場景列表"""
+        """獲取當前可用的場景列表（主線地點 + DLC 區域入口）"""
         available = []
 
-        # 主線場景
+        # 主線地點
         main_locations = [
-            ("memory_warehouse", "記憶倉庫", "cee"),
-            ("contract_office", "契約局", "jawa"),
+            ("memory_warehouse", "記憶倉庫", "cee", "前往記憶倉庫找 Cee"),
+            ("contract_office", "契約局", "jawa", "前往契約局找 Jawa"),
         ]
 
-        for loc_id, name, line in main_locations:
+        for loc_id, name, line, desc in main_locations:
             available.append({
                 "id": loc_id,
                 "name": name,
                 "line": line,
-                "is_dlc": False
+                "description": desc,
+                "is_dlc": False,
+                "entry_label": None  # 主線使用原有的跳轉邏輯
             })
 
-        # DLC 場景
-        for loc_id, loc_info in dlc_locations.items():
-            unlock_cond = loc_info.get("unlock_condition", lambda: True)
+        # DLC 區域入口
+        for region_id, region_info in dlc_regions.items():
+            unlock_cond = region_info.get("unlock_condition", lambda: True)
             if unlock_cond():
                 available.append({
-                    "id": loc_id,
-                    "name": loc_info.get("name", loc_id),
-                    "line": loc_info.get("dlc_id", "dlc"),
-                    "is_dlc": True
+                    "id": region_id,
+                    "name": region_info.get("name", region_id),
+                    "line": region_info.get("dlc_id", "dlc"),
+                    "description": region_info.get("description", ""),
+                    "is_dlc": True,
+                    "entry_label": region_info.get("entry_label", f"enter_{region_id}")
                 })
 
         return available
+
+    def get_dlc_region(region_id):
+        """獲取 DLC 區域信息"""
+        return dlc_regions.get(region_id)
 
 # ============================================================================
 # 6. 事件擴展系統
 # ============================================================================
 
-init python:
+init -999 python:
     # DLC 隨機事件列表
     if 'dlc_random_events' not in dir():
         dlc_random_events = []
@@ -361,7 +391,7 @@ label debug_dlc_status:
             narrator(f"  - {dlc.get('name', dlc.get('id', 'Unknown'))} v{dlc.get('version', '?')}")
 
         narrator(f"DLC 角色數量: {len(dlc_characters)}")
-        narrator(f"DLC 場景數量: {len(dlc_locations)}")
+        narrator(f"DLC 區域數量: {len(dlc_regions)}")
         narrator(f"DLC 隨機事件數量: {len(dlc_random_events)}")
 
     narrator "=== 主線狀態 ==="

@@ -125,6 +125,8 @@ init python:
 default current_time_period = "ST_00-01"
 default chosen_line = "none"
 default time_period_processed = False
+default chosen_dlc_region = None
+default chosen_dlc_entry_label = None
 
 # ============================================================================
 # 3. 時間線系統函數
@@ -233,6 +235,10 @@ label time_choice_menu:
             $ chosen_line = "jawa"
             jump execute_location_check
 
+        "前往其他區域" if len([loc for loc in get_available_locations() if loc["is_dlc"]]) > 0:
+            $ stop_plaza_music()
+            jump dlc_region_menu
+
         "在廣場坐一會兒":
             # 在廣場坐一會兒不需要停止音樂（仍然在廣場）
             $ chosen_line = "rest"
@@ -242,6 +248,44 @@ label time_choice_menu:
             # 在源界隨處逛逛不需要停止音樂（仍然在閒逛）
             $ chosen_line = "explore"
             jump execute_explore
+
+# ============================================================================
+# DLC 區域選擇菜單
+# ============================================================================
+
+label dlc_region_menu:
+    # 動態生成 DLC 區域選項
+    python hide:
+        # 重新獲取 DLC 區域列表
+        dlc_locs = [loc for loc in get_available_locations() if loc["is_dlc"]]
+
+        # 構建選項列表
+        choices = []
+        for loc in dlc_locs:
+            choices.append((loc["name"], loc["id"]))
+
+        choices.append(("返回廣場", "back"))
+
+        # 顯示菜單
+        selection = renpy.display_menu(choices)
+
+        if selection == "back":
+            renpy.jump("time_choice_menu")
+        else:
+            # 找到選中的區域並跳轉
+            for loc in dlc_locs:
+                if loc["id"] == selection:
+                    store.chosen_dlc_region = selection
+                    store.chosen_dlc_entry_label = loc.get("entry_label")
+                    renpy.jump("enter_dlc_region")
+
+label enter_dlc_region:
+    # 進入 DLC 區域
+    if chosen_dlc_entry_label:
+        jump expression chosen_dlc_entry_label
+    else:
+        narrator "這個區域還在建設中..."
+        jump time_choice_menu
 
 label execute_location_check:
     $ current = get_current_time_period()
