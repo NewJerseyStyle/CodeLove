@@ -184,17 +184,17 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_02_memory.rpy:37
     old "建議一套清理機制：佔用與歸還(malloc/free)"
-    new ""
+    new "Suggest establishing a cleanup mechanism: allocate and free (malloc/free)"
 
     # game/rpy/chapters/cee/C_02_memory.rpy:40
     old "問她為什麼不叫人來幫忙打掃？"
-    new ""
+    new "Ask her why not ask someone to help clean up?"
 
     # game/rpy/chapters/cee/C_02_memory.rpy:43
     old "讓她自己想辦法重啟"
-    new ""
+    new "Let her figure out how to restart on her own"
 
     # game/rpy/chapters/cee/C_02_memory.rpy:131
     old "建議使用手動清理 (malloc/free)"
-    new ""
+    new "Suggest using manual cleanup (malloc/free)"
 

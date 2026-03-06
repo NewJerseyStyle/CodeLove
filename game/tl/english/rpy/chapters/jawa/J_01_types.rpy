@@ -404,9 +404,9 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_01_types.rpy:44
     old "支持 Jawa 的嚴格分類（強型別安全）"
-    new ""
+    new "Support Jawa's strict classification (strong typing safety)"
 
     # game/rpy/chapters/jawa/J_01_types.rpy:47
     old "建議定義一套『標準容器規則』（Interface）"
-    new ""
+    new "Suggest defining a 'standard container rule' (Interface)"
 

@@ -124,17 +124,17 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_08_networking.rpy:30
     old "建議建立『三向握手』 (Handshake) 確保連線"
-    new ""
+    new "Suggest establishing 'Three-way handshake' (Handshake) to ensure connection"
 
     # game/rpy/chapters/jawa/J_08_networking.rpy:33
     old "建議 Jawa 換個更大的喇叭喊"
-    new ""
+    new "Suggest Jawa use a bigger megaphone to shout"
 
     # game/rpy/chapters/jawa/J_08_networking.rpy:36
     old "問她為什麼不叫 Golly 跑腿去送？"
-    new ""
+    new "Ask her why not ask Golly to run the delivery?"
 
     # game/rpy/chapters/jawa/J_08_networking.rpy:85
     old "建立標準通訊協定 (Protocol)"
-    new ""
+    new "Establish standard protocol (Protocol)"
 

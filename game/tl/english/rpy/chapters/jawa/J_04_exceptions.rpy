@@ -148,17 +148,17 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_04_exceptions.rpy:30
     old "建議建立『捕獲網』 (Try-Catch) 攔截錯誤"
-    new ""
+    new "Suggest establishing a 'Capture Net' (Try-Catch) to intercept errors"
 
     # game/rpy/chapters/jawa/J_04_exceptions.rpy:33
     old "建議 Py 以後寫合約要先檢查有沒有 0"
-    new ""
+    new "Suggest Py check if there's a 0 before writing contracts"
 
     # game/rpy/chapters/jawa/J_04_exceptions.rpy:36
     old "問她為什麼不直接忽略這個錯誤？"
-    new ""
+    new "Ask her why she doesn't just ignore this error?"
 
     # game/rpy/chapters/jawa/J_04_exceptions.rpy:89
     old "建立捕獲網 (Try-Catch)"
-    new ""
+    new "Build a capture net (Try-Catch)"
 

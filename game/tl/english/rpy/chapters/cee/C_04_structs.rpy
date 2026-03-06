@@ -286,29 +286,29 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_04_structs.rpy:23
     old "解釋並承擔責任"
-    new ""
+    new "Explain and take responsibility"
 
     # game/rpy/chapters/cee/C_04_structs.rpy:25
     old "先幫 Cee 清理後果"
-    new ""
+    new "First help Cee clean up the consequences"
 
     # game/rpy/chapters/cee/C_04_structs.rpy:27
     old "直接開始新的任務"
-    new ""
+    new "Start the new task directly"
 
     # game/rpy/chapters/cee/C_04_structs.rpy:128
     old "建議使用『複合箱子』 (Struct)"
-    new ""
+    new "Suggest using the 'Composite Box' (Struct)"
 
     # game/rpy/chapters/cee/C_04_structs.rpy:131
     old "建議使用『變身箱子』 (Union) 來節省空間"
-    new ""
+    new "Suggest using the 'Transforming Box' (Union) to save space"
 
     # game/rpy/chapters/cee/C_04_structs.rpy:134
     old "問她為什麼不把所有東西都轉成字串存放在一起？"
-    new ""
+    new "Ask her why not convert everything to string storage?"
 
     # game/rpy/chapters/cee/C_04_structs.rpy:186
     old "使用結構體 (Struct) 打包"
-    new ""
+    new "Use struct (Struct) packing"
 

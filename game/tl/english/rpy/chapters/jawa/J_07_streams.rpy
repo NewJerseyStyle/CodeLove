@@ -130,17 +130,17 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_07_streams.rpy:27
     old "建議使用『數據加工流水線』 (Streams & Lambda)"
-    new ""
+    new "Suggest using 'Data processing pipeline' (Streams & Lambda)"
 
     # game/rpy/chapters/jawa/J_07_streams.rpy:30
     old "建議 Jawa 繼續寫傳統的迴圈，確保萬無一失"
-    new ""
+    new "Suggest Jawa continue with traditional loops to ensure nothing goes wrong"
 
     # game/rpy/chapters/jawa/J_07_streams.rpy:33
     old "問她為什麼不叫 Cee 幫忙排序？"
-    new ""
+    new "Ask her why not ask Cee to help with sorting?"
 
     # game/rpy/chapters/jawa/J_07_streams.rpy:84
     old "使用串流 API (Streams & Lambda)"
-    new ""
+    new "Use stream API (Streams & Lambda)"
 

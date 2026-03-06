@@ -352,41 +352,41 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:14
     old "幫忙清理之前的記憶體洩漏"
-    new ""
+    new "Help clean up previous memory leaks"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:16
     old "繼續進行字串列車任務"
-    new ""
+    new "Continue string train task"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:53
     old "建議在末尾加上『終止符』 (\\0)"
-    new ""
+    new "Suggest adding a 'Terminator' (\\0) at the end"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:56
     old "建議縮減字串長度，不要超過車廂數量"
-    new ""
+    new "Suggest reducing string length, don't exceed carriages"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:59
     old "問她為什麼不一開始就規定好長度？"
-    new ""
+    new "Ask her why not specify the length from the start?"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:62
     old "不管它，繼續寫入"
-    new ""
+    new "Ignore it, keep writing"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:225
     old "加上終止符 (\\0)"
-    new ""
+    new "Add terminator (\\0)"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:227
     old "建議邊界檢查"
-    new ""
+    new "Suggest boundary checking"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:259
     old "幫忙清理之前的問題"
-    new ""
+    new "Help clean up previous issues"
 
     # game/rpy/chapters/cee/C_03_arrays.rpy:261
     old "硬著頭皮繼續"
-    new ""
+    new "Keep going despite the difficulty"
 

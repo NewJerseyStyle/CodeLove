@@ -130,17 +130,17 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_05_generics.rpy:27
     old "建議使用『可調整規格的標籤』 (Generics)"
-    new ""
+    new "Suggest using 'Adjustable-Spec Label' (Generics)"
 
     # game/rpy/chapters/jawa/J_05_generics.rpy:30
     old "建議使用 Py 的『萬用麻布袋』"
-    new ""
+    new "Suggest using Py's 'Universal Cloth Bag'"
 
     # game/rpy/chapters/jawa/J_05_generics.rpy:33
     old "問她為什麼不直接把所有櫃子都改成大的？"
-    new ""
+    new "Ask her why she doesn't just make all the cabinets bigger?"
 
     # game/rpy/chapters/jawa/J_05_generics.rpy:84
     old "使用泛型 (Generics) 容器"
-    new ""
+    new "Use generics (Generics) container"
 

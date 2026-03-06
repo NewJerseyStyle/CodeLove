@@ -730,5 +730,5 @@ translate english strings:
 
     # game/rpy/chapters/prologue.rpy:425
     old "準備好了"
-    new ""
+    new "Ready"
 

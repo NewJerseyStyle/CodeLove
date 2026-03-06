@@ -670,333 +670,333 @@ translate english strings:
 
     # game/rpy/chapters/shared/explore_events.rpy:290
     old "接受挑戰！"
-    new ""
+    new "Accept the challenge!"
 
     # game/rpy/chapters/shared/explore_events.rpy:299
     old "下次一定"
-    new ""
+    new "Next time for sure"
 
     # game/rpy/chapters/shared/explore_events.rpy:309
     old "int* p;"
-    new ""
+    new "int* p;"
 
     # game/rpy/chapters/shared/explore_events.rpy:311
     old "int &p;"
-    new ""
+    new "int &p;"
 
     # game/rpy/chapters/shared/explore_events.rpy:316
     old "*"
-    new ""
+    new "*"
 
     # game/rpy/chapters/shared/explore_events.rpy:318
     old "&"
-    new ""
+    new "&"
 
     # game/rpy/chapters/shared/explore_events.rpy:323
     old "alloc()"
-    new ""
+    new "alloc()"
 
     # game/rpy/chapters/shared/explore_events.rpy:325
     old "malloc()"
-    new ""
+    new "malloc()"
 
     # game/rpy/chapters/shared/explore_events.rpy:330
     old "sizeof()"
-    new ""
+    new "sizeof()"
 
     # game/rpy/chapters/shared/explore_events.rpy:332
     old "length()"
-    new ""
+    new "length()"
 
     # game/rpy/chapters/shared/explore_events.rpy:337
     old "5"
-    new ""
+    new "5"
 
     # game/rpy/chapters/shared/explore_events.rpy:339
     old "6 (包含 \\0)"
-    new ""
+    new "6 (including \\0)"
 
     # game/rpy/chapters/shared/explore_events.rpy:344
     old "."
-    new ""
+    new "."
 
     # game/rpy/chapters/shared/explore_events.rpy:346
     old "->"
-    new ""
+    new "->"
 
     # game/rpy/chapters/shared/explore_events.rpy:351
     old "-1"
-    new ""
+    new "-1"
 
     # game/rpy/chapters/shared/explore_events.rpy:353
     old "NULL"
-    new ""
+    new "NULL"
 
     # game/rpy/chapters/shared/explore_events.rpy:358
     old "stdio.h"
-    new ""
+    new "stdio.h"
 
     # game/rpy/chapters/shared/explore_events.rpy:360
     old "stdlib.h"
-    new ""
+    new "stdlib.h"
 
     # game/rpy/chapters/shared/explore_events.rpy:365
     old "0"
-    new ""
+    new "0"
 
     # game/rpy/chapters/shared/explore_events.rpy:367
     old "1"
-    new ""
+    new "1"
 
     # game/rpy/chapters/shared/explore_events.rpy:372
     old "typedef"
-    new ""
+    new "typedef"
 
     # game/rpy/chapters/shared/explore_events.rpy:374
     old "define"
-    new ""
+    new "define"
 
     # game/rpy/chapters/shared/explore_events.rpy:386
     old "implements"
-    new ""
+    new "implements"
 
     # game/rpy/chapters/shared/explore_events.rpy:388
     old "extends"
-    new ""
+    new "extends"
 
     # game/rpy/chapters/shared/explore_events.rpy:393
     old "this"
-    new ""
+    new "this"
 
     # game/rpy/chapters/shared/explore_events.rpy:395
     old "super"
-    new ""
+    new "super"
 
     # game/rpy/chapters/shared/explore_events.rpy:400
     old "final"
-    new ""
+    new "final"
 
     # game/rpy/chapters/shared/explore_events.rpy:402
     old "const"
-    new ""
+    new "const"
 
     # game/rpy/chapters/shared/explore_events.rpy:407
     old "類別本身 (Class)"
-    new ""
+    new "The class itself (Class)"
 
     # game/rpy/chapters/shared/explore_events.rpy:409
     old "物件實體 (Instance)"
-    new ""
+    new "Object instance (Instance)"
 
     # game/rpy/chapters/shared/explore_events.rpy:414
     old ".exe"
-    new ""
+    new ".exe"
 
     # game/rpy/chapters/shared/explore_events.rpy:416
     old ".class"
-    new ""
+    new ".class"
 
     # game/rpy/chapters/shared/explore_events.rpy:421
     old "try-catch"
-    new ""
+    new "try-catch"
 
     # game/rpy/chapters/shared/explore_events.rpy:423
     old "check-fail"
-    new ""
+    new "check-fail"
 
     # game/rpy/chapters/shared/explore_events.rpy:428
     old "Base"
-    new ""
+    new "Base"
 
     # game/rpy/chapters/shared/explore_events.rpy:430
     old "Object"
-    new ""
+    new "Object"
 
     # game/rpy/chapters/shared/explore_events.rpy:435
     old "new"
-    new ""
+    new "new"
 
     # game/rpy/chapters/shared/explore_events.rpy:437
     old "create"
-    new ""
+    new "create"
 
     # game/rpy/chapters/shared/explore_events.rpy:449
     old "支持"
-    new ""
+    new "Support"
 
     # game/rpy/chapters/shared/explore_events.rpy:451
     old "不支持"
-    new ""
+    new "Do not support"
 
     # game/rpy/chapters/shared/explore_events.rpy:463
     old "可變的 (Mutable)"
-    new ""
+    new "Mutable (Mutable)"
 
     # game/rpy/chapters/shared/explore_events.rpy:465
     old "不可變的 (Immutable)"
-    new ""
+    new "Immutable (Immutable)"
 
     # game/rpy/chapters/shared/explore_events.rpy:470
     old "!"
-    new ""
+    new "!"
 
     # game/rpy/chapters/shared/explore_events.rpy:472
     old "#"
-    new ""
+    new "#"
 
     # game/rpy/chapters/shared/explore_events.rpy:477
     old ".unwrap()"
-    new ""
+    new ".unwrap()"
 
     # game/rpy/chapters/shared/explore_events.rpy:479
     old ".get()"
-    new ""
+    new ".get()"
 
     # game/rpy/chapters/shared/explore_events.rpy:484
     old "switch"
-    new ""
+    new "switch"
 
     # game/rpy/chapters/shared/explore_events.rpy:486
     old "match"
-    new ""
+    new "match"
 
     # game/rpy/chapters/shared/explore_events.rpy:491
     old "繼續有效 (Copy)"
-    new ""
+    new "Still valid (Copy)"
 
     # game/rpy/chapters/shared/explore_events.rpy:493
     old "失效 (Move，除非實現了 Copy 特徵)"
-    new ""
+    new "Invalidated (Move, unless implementing Copy trait)"
 
     # game/rpy/chapters/shared/explore_events.rpy:498
     old "Cargo"
-    new ""
+    new "Cargo"
 
     # game/rpy/chapters/shared/explore_events.rpy:500
     old "RustPM"
-    new ""
+    new "RustPM"
 
     # game/rpy/chapters/shared/explore_events.rpy:505
     old "interface"
-    new ""
+    new "interface"
 
     # game/rpy/chapters/shared/explore_events.rpy:507
     old "trait"
-    new ""
+    new "trait"
 
     # game/rpy/chapters/shared/explore_events.rpy:512
     old "println!()"
-    new ""
+    new "println!()"
 
     # game/rpy/chapters/shared/explore_events.rpy:514
     old "print()"
-    new ""
+    new "print()"
 
     # game/rpy/chapters/shared/explore_events.rpy:519
     old "void"
-    new ""
+    new "void"
 
     # game/rpy/chapters/shared/explore_events.rpy:521
     old "() (Unit type)"
-    new ""
+    new "() (Unit type)"
 
     # game/rpy/chapters/shared/explore_events.rpy:526
     old "unsafe"
-    new ""
+    new "unsafe"
 
     # game/rpy/chapters/shared/explore_events.rpy:528
     old "raw"
-    new ""
+    new "raw"
 
     # game/rpy/chapters/shared/explore_events.rpy:540
     old "縮排 (Indentation)"
-    new ""
+    new "Indentation (Indentation)"
 
     # game/rpy/chapters/shared/explore_events.rpy:542
     old "大括號 {}"
-    new ""
+    new "Curly braces {}"
 
     # game/rpy/chapters/shared/explore_events.rpy:547
     old "def name():"
-    new ""
+    new "def name():"
 
     # game/rpy/chapters/shared/explore_events.rpy:549
     old "function name():"
-    new ""
+    new "function name():"
 
     # game/rpy/chapters/shared/explore_events.rpy:556
     old "self"
-    new ""
+    new "self"
 
     # game/rpy/chapters/shared/explore_events.rpy:561
     old "len(list)"
-    new ""
+    new "len(list)"
 
     # game/rpy/chapters/shared/explore_events.rpy:563
     old "list.size()"
-    new ""
+    new "list.size()"
 
     # game/rpy/chapters/shared/explore_events.rpy:568
     old "list[0:3]"
-    new ""
+    new "list[0:3]"
 
     # game/rpy/chapters/shared/explore_events.rpy:570
     old "list.slice(3)"
-    new ""
+    new "list.slice(3)"
 
     # game/rpy/chapters/shared/explore_events.rpy:575
     old "import"
-    new ""
+    new "import"
 
     # game/rpy/chapters/shared/explore_events.rpy:577
     old "include"
-    new ""
+    new "include"
 
     # game/rpy/chapters/shared/explore_events.rpy:582
     old "__init__"
-    new ""
+    new "__init__"
 
     # game/rpy/chapters/shared/explore_events.rpy:584
     old "__new__"
-    new ""
+    new "__new__"
 
     # game/rpy/chapters/shared/explore_events.rpy:589
     old "input()"
-    new ""
+    new "input()"
 
     # game/rpy/chapters/shared/explore_events.rpy:591
     old "scanf()"
-    new ""
+    new "scanf()"
 
     # game/rpy/chapters/shared/explore_events.rpy:596
     old "/"
-    new ""
+    new "/"
 
     # game/rpy/chapters/shared/explore_events.rpy:598
     old "//"
-    new ""
+    new "//"
 
     # game/rpy/chapters/shared/explore_events.rpy:603
     old "dir()"
-    new ""
+    new "dir()"
 
     # game/rpy/chapters/shared/explore_events.rpy:605
     old "list()"
-    new ""
+    new "list()"
 
     # game/rpy/chapters/shared/explore_events.rpy:669
     old "閉目養神，讓時間流逝"
-    new ""
+    new "Close eyes and let time pass"
 
     # game/rpy/chapters/shared/explore_events.rpy:673
     old "強打精神，再坐一會兒"
-    new ""
+    new "Force yourself to stay awake a while longer"
 
     # game/rpy/chapters/shared/explore_events.rpy:676
     old "順從睡意"
-    new ""
+    new "Give in to the sleepiness"
 
     # game/rpy/chapters/shared/explore_events.rpy:681
     old "看看周圍有沒有認識的人"
-    new ""
+    new "Look around to see if there are any acquaintances"
 

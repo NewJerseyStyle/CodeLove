@@ -130,17 +130,17 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_07_linked_lists.rpy:30
     old "建議使用『寻寶圖』的方式連接箱子 (Linked List)"
-    new ""
+    new "Suggest using the 'Treasure Map' method to connect boxes (Linked List)"
 
     # game/rpy/chapters/cee/C_07_linked_lists.rpy:33
     old "建議她把剩下的箱子全扔了，重新買一批"
-    new ""
+    new "Suggest she throws away all remaining boxes and buys a new batch"
 
     # game/rpy/chapters/cee/C_07_linked_lists.rpy:36
     old "問她為什麼不一開始就留點空格？"
-    new ""
+    new "Ask her why not leave some space from the start?"
 
     # game/rpy/chapters/cee/C_07_linked_lists.rpy:83
     old "使用連結串列 (Linked List)"
-    new ""
+    new "Use linked list (Linked List)"
 

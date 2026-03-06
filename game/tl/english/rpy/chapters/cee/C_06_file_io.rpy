@@ -148,17 +148,17 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_06_file_io.rpy:30
     old "建議使用『小桶接水』 (Buffering) 的方式傳輸"
-    new ""
+    new "Suggest using the 'Small bucket water transfer' (Buffering) method"
 
     # game/rpy/chapters/cee/C_06_file_io.rpy:33
     old "建議她一直搬到搬完為止"
-    new ""
+    new "Suggest she keeps moving until she finishes"
 
     # game/rpy/chapters/cee/C_06_file_io.rpy:36
     old "問她為什麼不叫 Jawa 用資料庫？"
-    new ""
+    new "Ask her why not ask Jawa to use a database?"
 
     # game/rpy/chapters/cee/C_06_file_io.rpy:91
     old "使用緩衝區 (Buffer) 傳輸"
-    new ""
+    new "Use buffer (Buffer) transfer"
 

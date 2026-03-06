@@ -166,13 +166,13 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_09_final.rpy:32
     old "建議引入『中介者』 (Mediator) 來統一調度，打破循環"
-    new ""
+    new "Suggest introducing 'Mediator' (Mediator) to coordinate uniformly and break the loop"
 
     # game/rpy/chapters/jawa/J_09_final.rpy:35
     old "建議將核心合約『解耦』 (Decoupling)，讓它們獨立運行"
-    new ""
+    new "Suggest decoupling the core contracts (Decoupling) to run them independently"
 
     # game/rpy/chapters/jawa/J_09_final.rpy:38
     old "建議將自己的意識作為『最終仲裁者』，手動處理所有依賴"
-    new ""
+    new "Suggest using your consciousness as the 'Final Arbiter' to manually handle all dependencies"
 

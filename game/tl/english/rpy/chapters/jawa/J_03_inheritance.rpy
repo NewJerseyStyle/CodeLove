@@ -166,17 +166,17 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_03_inheritance.rpy:28
     old "建議定義『父類別』並讓各個袋子『繼承』 (Inheritance)"
-    new ""
+    new "Suggest defining 'Parent Class' and letting each bag 'inherit' (Inheritance)"
 
     # game/rpy/chapters/jawa/J_03_inheritance.rpy:31
     old "建議使用『萬用說明書』來根據不同袋子執行不同動作 (Polymorphism)"
-    new ""
+    new "Suggest using 'Universal Manual' to execute different actions based on different bags (Polymorphism)"
 
     # game/rpy/chapters/jawa/J_03_inheritance.rpy:34
     old "問她為什麼不把所有袋子都改成同一種？"
-    new ""
+    new "Ask her why not change all bags to the same type?"
 
     # game/rpy/chapters/jawa/J_03_inheritance.rpy:96
     old "使用繼承與多型 (OOP)"
-    new ""
+    new "Use inheritance and polymorphism (OOP)"
 

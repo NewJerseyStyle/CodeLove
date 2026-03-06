@@ -154,13 +154,13 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_09_final.rpy:30
     old "建議使用『自定義分配器』 (Memory Pool) 來優化，保住核心資料"
-    new ""
+    new "Suggest using 'Custom Allocator' (Memory Pool) to optimize and save core data"
 
     # game/rpy/chapters/cee/C_09_final.rpy:33
     old "建議她狠心清空所有『未授權』資料"
-    new ""
+    new "Suggest she ruthlessly clears all 'unauthorized' data"
 
     # game/rpy/chapters/cee/C_09_final.rpy:36
     old "建議她用自己的核心暫存區來存儲那些記憶"
-    new ""
+    new "Suggest she uses her own core buffer to store those memories"
 

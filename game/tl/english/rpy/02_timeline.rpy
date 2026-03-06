@@ -190,29 +190,29 @@ translate english strings:
 
     # game/rpy/02_timeline.rpy:220
     old "前往結局評估"
-    new ""
+    new "Go to final assessment"
 
     # game/rpy/02_timeline.rpy:224
     old "前往共同事件：[shared]"
-    new ""
+    new "Go to shared event: [shared]"
 
     # game/rpy/02_timeline.rpy:228
     old "前往記憶倉庫"
-    new ""
+    new "Go to memory warehouse"
 
     # game/rpy/02_timeline.rpy:233
     old "前往契約局"
-    new ""
+    new "Go to contract bureau"
 
     # game/rpy/02_timeline.rpy:238
     old "前往其他區域"
-    new ""
+    new "Go to other regions"
 
     # game/rpy/02_timeline.rpy:243
     old "在廣場坐一會兒"
-    new ""
+    new "Sit at the square for a while"
 
     # game/rpy/02_timeline.rpy:248
     old "在源界隨處逛逛"
-    new ""
+    new "Stroll around Source Realm"
 

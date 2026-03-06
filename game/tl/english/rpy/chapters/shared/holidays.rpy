@@ -562,41 +562,41 @@ translate english strings:
 
     # game/rpy/chapters/shared/holidays.rpy:24
     old "幫忙 Cee 清理記憶體（修復後果）"
-    new ""
+    new "Help Cee clean up memory (fix consequences)"
 
     # game/rpy/chapters/shared/holidays.rpy:26
     old "去資訊廣場找 Jawa（跳過 Cee 的假日）"
-    new ""
+    new "Go to information square to find Jawa (skip Cee's holiday)"
 
     # game/rpy/chapters/shared/holidays.rpy:40
     old "幫 Rusty 恢復資料（修復後果）"
-    new ""
+    new "Help Rusty recover data (fix consequences)"
 
     # game/rpy/chapters/shared/holidays.rpy:42
     old "去資訊廣場找 Jawa（讓 Rusty 冷靜一下）"
-    new ""
+    new "Go to information square to find Jawa (let Rusty calm down)"
 
     # game/rpy/chapters/shared/holidays.rpy:176
     old "幫忙 Cee（修復後果/趕進度）"
-    new ""
+    new "Help Cee (fix consequences/make up time)"
 
     # game/rpy/chapters/shared/holidays.rpy:178
     old "自己去資訊廣場逛逛"
-    new ""
+    new "Go stroll around the information square yourself"
 
     # game/rpy/chapters/shared/holidays.rpy:180
     old "去記憶倉庫最深處看看"
-    new ""
+    new "Go to the deepest part of the memory warehouse"
 
     # game/rpy/chapters/shared/holidays.rpy:294
     old "去找 Jawa 聊聊"
-    new ""
+    new "Go find Jawa to chat"
 
     # game/rpy/chapters/shared/holidays.rpy:297
     old "去找 Rusty 聊聊"
-    new ""
+    new "Go find Rusty to chat"
 
     # game/rpy/chapters/shared/holidays.rpy:299
     old "獨自逛逛"
-    new ""
+    new "Stroll around by yourself"
 

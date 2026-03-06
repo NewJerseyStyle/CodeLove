@@ -148,17 +148,17 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_08_recursion.rpy:30
     old "建議使用『複製自己並進入下一層』 (Recursion) 的方法"
-    new ""
+    new "Suggest using the 'Copy yourself and enter the next layer' (Recursion) method"
 
     # game/rpy/chapters/cee/C_08_recursion.rpy:33
     old "建議她拿個大錘子把盒子全砸了"
-    new ""
+    new "Suggest she uses a big hammer to smash all the boxes"
 
     # game/rpy/chapters/cee/C_08_recursion.rpy:36
     old "問她為什麼不叫 Jawa 用對象導向解決？"
-    new ""
+    new "Ask her why not ask Jawa to use object-oriented solutions?"
 
     # game/rpy/chapters/cee/C_08_recursion.rpy:91
     old "使用遞迴 (Recursion) 算法"
-    new ""
+    new "Use recursion (Recursion) algorithm"
 

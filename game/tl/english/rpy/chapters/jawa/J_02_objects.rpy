@@ -142,17 +142,17 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_02_objects.rpy:28
     old "建議使用『藍圖與複製品』(Class & Object) 系統"
-    new ""
+    new "Suggest using the 'Blueprint & Copy' (Class & Object) system"
 
     # game/rpy/chapters/jawa/J_02_objects.rpy:31
     old "問她為什麼不直接影印一個現成的工具？"
-    new ""
+    new "Ask her why she doesn't just copy an existing tool"
 
     # game/rpy/chapters/jawa/J_02_objects.rpy:34
     old "靜靜看著 Rusty 繼續手動組裝"
-    new ""
+    new "Quietly watch Rusty continue manual assembly"
 
     # game/rpy/chapters/jawa/J_02_objects.rpy:85
     old "建議使用藍圖系統 (OOP)"
-    new ""
+    new "Suggest using blueprint system (OOP)"
 

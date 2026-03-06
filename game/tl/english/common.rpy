@@ -788,7 +788,7 @@ translate english strings:
 
     # renpy/common/00preferences.rpy:725
     old "Self-voicing would say \"[renpy.display.tts.last]\". Press 'alt+shift+V' to disable."
-    new ""
+    new "Self-voicing would say \"[renpy.display.tts.last]\". Press 'alt+shift+V' to disable."
 
     # renpy/common/00preferences.rpy:727
     old "Self-voicing enabled. Press 'v' to disable."

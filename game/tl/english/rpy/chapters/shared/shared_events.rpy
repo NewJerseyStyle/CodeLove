@@ -226,29 +226,29 @@ translate english strings:
 
     # game/rpy/chapters/shared/shared_events.rpy:46
     old "支持 Jawa 的『互斥鎖』(Mutex) 方案"
-    new ""
+    new "Support Jawa's 'Mutex' (Mutex) plan"
 
     # game/rpy/chapters/shared/shared_events.rpy:49
     old "支持 Cee 的『原子操作』(Atomic) 方案"
-    new ""
+    new "Support Cee's 'Atomic' (Atomic) plan"
 
     # game/rpy/chapters/shared/shared_events.rpy:52
     old "自己嘗試手動協調"
-    new ""
+    new "Try coordinating manually yourself"
 
     # game/rpy/chapters/shared/shared_events.rpy:138
     old "支持 Cee：效率與速度是系統的基石"
-    new ""
+    new "Support Cee: efficiency and speed are the foundation of the system"
 
     # game/rpy/chapters/shared/shared_events.rpy:142
     old "支持 Py：開發者的時間比機器的時間更寶貴"
-    new ""
+    new "Support Py: developer's time is more valuable than machine's time"
 
     # game/rpy/chapters/shared/shared_events.rpy:146
     old "支持 Jawa：嚴謹的架構才能承載大型文明"
-    new ""
+    new "Support Jawa: rigorous architecture can carry large civilizations"
 
     # game/rpy/chapters/shared/shared_events.rpy:150
     old "支持 Golly：並行與現代化是唯一的出路"
-    new ""
+    new "Support Golly: parallelism and modernization are the only way forward"
 

@@ -148,17 +148,17 @@ translate english strings:
 
     # game/rpy/chapters/jawa/J_06_multi_threading.rpy:30
     old "建議開啟『執行緒助手』 (Threads) 並配備『互斥鎖』 (Synchronized)"
-    new ""
+    new "Suggest turning on 'Thread Helper' (Threads) and equipping 'Mutex' (Synchronized)"
 
     # game/rpy/chapters/jawa/J_06_multi_threading.rpy:33
     old "建議 Jawa 直接加速，跑得比 Golly 還快"
-    new ""
+    new "Suggest Jawa speed up directly, run faster than Golly"
 
     # game/rpy/chapters/jawa/J_06_multi_threading.rpy:36
     old "問她為什麼不把合約都交給 Golly 處理？"
-    new ""
+    new "Ask her why not give all the contracts to Golly to handle?"
 
     # game/rpy/chapters/jawa/J_06_multi_threading.rpy:91
     old "使用多執行緒 (Threads) 與同步 (Synchronized)"
-    new ""
+    new "Use multi-threading (Threads) and synchronization (Synchronized)"
 

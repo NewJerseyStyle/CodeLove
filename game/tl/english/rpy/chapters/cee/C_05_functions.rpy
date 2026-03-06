@@ -124,17 +124,17 @@ translate english strings:
 
     # game/rpy/chapters/cee/C_05_functions.rpy:26
     old "建議定義一個『標準動作』 (Function) 並重複調用"
-    new ""
+    new "Suggest defining a 'Standard Action' (Function) and calling it repeatedly"
 
     # game/rpy/chapters/cee/C_05_functions.rpy:29
     old "建議她寫一張大字報貼在牆上提醒自己"
-    new ""
+    new "Suggest she writes a big poster to put on the wall as a reminder"
 
     # game/rpy/chapters/cee/C_05_functions.rpy:32
     old "問她為什麼不叫 Py 寫個腳本自動化？"
-    new ""
+    new "Ask her why not ask Py to write a script to automate it?"
 
     # game/rpy/chapters/cee/C_05_functions.rpy:81
     old "定義標準動作 (Function)"
-    new ""
+    new "Define standard action (Function)"
 

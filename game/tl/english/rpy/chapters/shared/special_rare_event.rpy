@@ -274,13 +274,13 @@ translate english strings:
 
     # game/rpy/chapters/shared/special_rare_event.rpy:54
     old "我想聽... 我想了解更多"
-    new ""
+    new "I want to hear... I want to know more"
 
     # game/rpy/chapters/shared/special_rare_event.rpy:56
     old "我得走了..."
-    new ""
+    new "I have to go..."
 
     # game/rpy/chapters/shared/special_rare_event.rpy:58
     old "（靜靜地看著她，不說話）"
-    new ""
+    new "(Quietly watching her, saying nothing)"
 
