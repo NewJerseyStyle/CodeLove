@@ -143,8 +143,8 @@ Your choices affect which ending you get:
 
 | Resource | Description |
 |----------|-------------|
-| [DLC Developer Guide](https://github.com/NewJerseyStyle/codeLoveGame-GLM/blob/main/docs/DLC_DEVELOPER_GUIDE.md) | Complete step-by-step guide |
-| [DLC Quick Reference](https://github.com/NewJerseyStyle/codeLoveGame-GLM/blob/main/docs/DLC_QUICK_REFERENCE.md) | One-page reference |
+| [DLC Developer Guide](https://github.com/NewJerseyStyle/codeLoveGame-GLM/blob/main/docs/DLC_DEVELOPER_GUIDE_en.md) | Complete step-by-step guide |
+| [DLC Quick Reference](https://github.com/NewJerseyStyle/codeLoveGame-GLM/blob/main/docs/DLC_QUICK_REFERENCE_en.md) | One-page reference |
 | [DLC Template](https://github.com/NewJerseyStyle/CodeLove-DLC) | Ready-to-use template |
 | [DLC Example](https://github.com/NewJerseyStyle/CodeLove-Py-DLC) | Complete working example |
 
