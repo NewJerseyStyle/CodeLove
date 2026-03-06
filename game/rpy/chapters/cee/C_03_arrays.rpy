@@ -261,22 +261,6 @@ label cee_03_continue_with_consequence:
         "硬著頭皮繼續":
             jump cee_03_force_continue
 
-label cee_03_force_continue:
-    # 玩家強行繼續，但效率降低
-    cee "（手忙腳亂地處理）索引 0... 索引 1..."
-
-    narrator "Cee 因為分心處理之前的問題，效率大幅下降。"
-
-    menu:
-        "加上終止符 (\\0)":
-            jump cee_03_suggest_terminator
-        "建議邊界檢查":
-            jump cee_03_suggest_bounds_check
-        "繼續觀察":
-            jump cee_03_end
-
-label cee_03_suggest_alternative:
-
 label cee_03_end:
     scene black
     with Dissolve(2.0)
